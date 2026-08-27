@@ -1,25 +1,13 @@
 site_name: Voxels Technical Documentation
-site_url: []
 
 theme:
   name: material
-  custom_dir: overrides
-  logo_light_mode: images/myhaki-logo.png
-  logo_dark_mode: images/icon-logo.png
+  logo: images/logo.png  # This is the baseline logo file
   favicon: images/icon-logo.png
   palette:
     - scheme: default
-      primary: white
-      accent: black
-      toggle:
-        icon: octicons/moon-16
-        name: Switch to dark mode
-    - scheme: slate
-      primary: black
-      accent: white
-      toggle:
-        icon: octicons/sun-16
-        name: Switch to light mode
+      primary: custom
+      accent: custom
   font:
     text: Poppins
     code: Fira Mono
@@ -31,7 +19,6 @@ theme:
     - search.highlight
     - search.suggest
     - search.share
-  # custom_dir: docs/styles
 
 extra_css:
   - styles/extra.css
@@ -44,19 +31,15 @@ nav:
   - Features: features.md
   - Architecture: architecture.md
   - Frontend Mobile: mobile-development.md
-  - Frontend web: dashboard-web.md
+  - Frontend Web: dashboard-web.md
   - Backend: backend.md
-  - IoT Intergrations: .md
-  - Ai: ai.md
+  - IoT Hardware Prototype: hardware-prototype.md
+  - AI: ai.md
   - Q/A Process: qa-process.md
-  - Security implemented: security.md
-    - Deployment Process: deployment-process.md
+  - Security Implemented: security.md
+  - Deployment Process: deployment-process.md
   - Code Standards: code-standards.md
   - Brand Guideline: brand-guideline.md
-  -
-  - Changelog: changelog.md
-  - Compliance & Legal: compliance.md
-  # - Database Schema: schema.md
 
 markdown_extensions:
   - pymdownx.tasklist:

@@ -4,7 +4,7 @@ This repository houses the complete source code, hardware schematics, and deploy
 
 The complete, production-grade technical documentation is published and maintained on GitHub Pages.
 
-👉 **[View the Live Documentation Site]()**
+ **[View the Live Documentation Site]()**
 
 ---
 
