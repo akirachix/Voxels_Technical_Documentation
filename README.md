@@ -83,9 +83,6 @@ To ensure a frictionless onboarding experience, our documentation is structured 
 * **Coverage Targets:** Metrics detailing what parts of the codebase are covered by tests.
 * **Troubleshooting Matrix:** Direct index of common failures, error messages, explicit fixes, and known open issues.
 
-### Glossary
-* **Domain Lexicon:** Transparent definitions for every internal acronym, business term, and domain concept.
-
 ---
 
 ## Verification Test for New Team Members
