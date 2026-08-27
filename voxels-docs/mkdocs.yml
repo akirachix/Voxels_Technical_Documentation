@@ -1,0 +1,63 @@
+site_name: Voxels Technical Documentation
+site_url: []
+
+theme:
+  name: material
+  custom_dir: overrides
+  logo_light_mode: images/myhaki-logo.png
+  logo_dark_mode: images/icon-logo.png
+  favicon: images/icon-logo.png
+  palette:
+    - scheme: default
+      primary: white
+      accent: black
+      toggle:
+        icon: octicons/moon-16
+        name: Switch to dark mode
+    - scheme: slate
+      primary: black
+      accent: white
+      toggle:
+        icon: octicons/sun-16
+        name: Switch to light mode
+  font:
+    text: Poppins
+    code: Fira Mono
+  features:
+    - navigation.sections
+    - navigation.instant
+    - navigation.expand
+    - toc.integrate
+    - search.highlight
+    - search.suggest
+    - search.share
+  # custom_dir: docs/styles
+
+extra_css:
+  - styles/extra.css
+
+nav:
+  - Home: index.md
+  - Overview: overview.md
+  - Getting Started: getting-started.md
+  - How It Works: how-it-works.md
+  - Features: features.md
+  - Architecture: architecture.md
+  - Frontend Mobile: mobile-development.md
+  - Frontend web: dashboard-web.md
+  - Backend: backend.md
+  - IoT Intergrations: .md
+  - Ai: ai.md
+  - Q/A Process: qa-process.md
+  - Security implemented: security.md
+    - Deployment Process: deployment-process.md
+  - Code Standards: code-standards.md
+  - Brand Guideline: brand-guideline.md
+  -
+  - Changelog: changelog.md
+  - Compliance & Legal: compliance.md
+  # - Database Schema: schema.md
+
+markdown_extensions:
+  - pymdownx.tasklist:
+      custom_checkbox: true
