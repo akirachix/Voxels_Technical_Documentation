@@ -99,7 +99,7 @@
 /* Section styling */
 .api-section {
   margin-top: 3em;
-  padding-top: 1em;
+  padding: 2.5em;
   animation: fadeInUp 0.6s cubic-bezier(0.25, 1, 0.5, 1) both;
 }
 
