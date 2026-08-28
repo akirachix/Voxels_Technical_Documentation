@@ -1,5 +1,13 @@
 .api-page {
   max-width: 100%;
+  box-sizing: border-box;
+}
+
+.api-page *,
+.api-page *::before,
+.api-page *::after {
+  box-sizing: border-box;
+  max-width: 100%;
 }
 
 .api-hero {

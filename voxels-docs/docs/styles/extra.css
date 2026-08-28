@@ -1,37 +1,37 @@
 :root {
-  --md-primary-fg-color: #2D1A10;
-  --md-accent-fg-color: #CD8151;
-  --md-typeset-a-color: #CD8151;
-  --md-footer-bg-color: #2D1A10;
-  
-  --md-code-bg-color: #120F0E;
-  --md-success-bg-color: #42281A;
-  --md-info-bg-color: #42281A;
-  --md-warning-bg-color: #42281A;
-  --md-error-bg-color: #42281A;
-  
-  --md-font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
+  --md-primary-fg-color: #2d1a10;
+  --md-accent-fg-color: #cd8151;
+  --md-typeset-a-color: #cd8151;
+  --md-footer-bg-color: #2d1a10;
+
+  --md-code-bg-color: #120f0e;
+  --md-success-bg-color: #42281a;
+  --md-info-bg-color: #42281a;
+  --md-warning-bg-color: #42281a;
+  --md-error-bg-color: #42281a;
+
+  --md-font-family: "Poppins", "Segoe UI", Arial, sans-serif;
 }
 
 body {
   font-family: var(--md-font-family) !important;
-  background-color: #FFFFFF !important;
+  background-color: #ffffff !important;
   -webkit-font-smoothing: antialiased;
 }
 
 .md-container {
-  background-color: #FFFFFF !important;
+  background-color: #ffffff !important;
 }
 
 .md-header {
-  background-color: #2D1A10 !important;
-  border-bottom: 1px solid #42281A;
+  background-color: #2d1a10 !important;
+  border-bottom: 1px solid #42281a;
 }
 
 /* Animations */
 @keyframes fadeInUp {
   from {
-    opacity:0;
+    opacity: 0;
     transform: translateY(12px);
   }
   to {
@@ -41,8 +41,12 @@ body {
 }
 
 @keyframes lineGrow {
-  from { width: 0%; }
-  to { width: 100%; }
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
 }
 
 .md-main__inner {
@@ -52,17 +56,18 @@ body {
 }
 
 .md-content {
-  background-color: #2D1A10 !important;
+  background-color: #2d1a10 !important;
   border-radius: 16px;
   padding: 2.5em !important;
-  border: 1px solid #42281A;
+  border: 1px solid #42281a;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
   animation: fadeInUp 0.4s cubic-bezier(0.25, 1, 0.5, 1) both;
+  overflow-x: hidden;
 }
 
-.md-sidebar.md-sidebar--primary, 
+.md-sidebar.md-sidebar--primary,
 nav.md-nav--primary {
-  background-color: #FFFFFF !important;
+  background-color: #ffffff !important;
   min-width: 280px;
 }
 
@@ -85,7 +90,7 @@ nav.md-nav--primary {
   border-radius: 10px !important;
   font-size: 0.95rem !important;
   font-weight: 500 !important;
-  color: #2D1A10 !important;
+  color: #2d1a10 !important;
   text-decoration: none !important;
   background: transparent !important;
   border-left: 0 solid transparent !important;
@@ -93,26 +98,26 @@ nav.md-nav--primary {
 }
 
 .md-nav--primary .md-nav__link:hover {
-  background: #CD8151 !important;
-  color: #FFFFFF !important;
+  background: #cd8151 !important;
+  color: #ffffff !important;
   padding-left: 22px !important;
 }
 
 .md-nav--primary .md-nav__link--active,
 .md-nav__item--active > .md-nav__link {
-  background: #2D1A10 !important;
-  color: #FFFFFF !important;
+  background: #2d1a10 !important;
+  color: #ffffff !important;
   padding-left: 20px !important;
   font-weight: 600 !important;
   box-shadow: 0 6px 16px rgba(45, 26, 16, 0.25) !important;
 }
 
-.md-typeset h1, 
-.md-typeset h2, 
-.md-typeset h3, 
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3,
 .md-typeset h4 {
   font-family: var(--md-font-family);
-  color: #FFFFFF !important;
+  color: #ffffff !important;
   font-weight: 700;
 }
 
@@ -125,31 +130,33 @@ nav.md-nav--primary {
 }
 
 h1::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   left: 0;
   height: 2px;
-  background-color: #CD8151;
+  background-color: #cd8151;
   animation: lineGrow 0.6s cubic-bezier(0.25, 1, 0.5, 1) both;
 }
 
-.md-typeset p, 
-.md-typeset li, 
-.md-typeset td, 
+.md-typeset p,
+.md-typeset li,
+.md-typeset td,
 .md-typeset th {
-  color: #FFFFFF !important;
+  color: #ffffff !important;
   line-height: 1.6;
 }
 
-pre, code, .api-block {
+pre,
+code,
+.api-block {
   border-radius: 8px;
-  color: #FFFFFF !important;
+  color: #ffffff !important;
   background-color: var(--md-code-bg-color) !important;
-  font-family: 'Fira Mono', 'Consolas', monospace;
+  font-family: "Fira Mono", "Consolas", monospace;
   font-size: 0.95em;
   padding: 1em;
-  border: 1px solid #42281A;
+  border: 1px solid #42281a;
 }
 
 .md-nav__title,
@@ -164,54 +171,59 @@ pre, code, .api-block {
 }
 
 .md-search__form {
-  background-color: #2D1A10 !important;
+  background-color: #2d1a10 !important;
 }
 
 .md-search__input {
-  color: #FFFFFF !important;
+  color: #ffffff !important;
 }
 
 .md-search__input::placeholder {
-  color: #D4C5BD !important;
+  color: #d4c5bd !important;
 }
 
-.md-search-result__meta, 
+.md-search-result__meta,
 .md-search-result__dropdown,
 .md-search__output {
-  background-color: #2D1A10 !important;
-  color: #FFFFFF !important;
-  border: 1px solid #42281A;
+  background-color: #2d1a10 !important;
+  color: #ffffff !important;
+  border: 1px solid #42281a;
 }
 
 .md-search-result__link {
-  color: #FFFFFF !important;
+  color: #ffffff !important;
 }
 
 /* --- Global Body Link Hover States --- */
 .md-typeset a:hover {
-  color: #CD8151 !important;
+  color: #cd8151 !important;
   text-decoration: underline;
   transition: color 0.2s ease-in-out;
 }
 
 /* --- Left Side Panel Navigation Link Hover States --- */
 .md-nav--primary .md-nav__link:hover {
-  background-color: rgba(205, 129, 81, 0.08) !important; /* Soft terracotta background tint */
-  color: #CD8151 !important; /* Forces text color switch to #CD8151 */
+  background-color: rgba(
+    205,
+    129,
+    81,
+    0.08
+  ) !important; /* Soft terracotta background tint */
+  color: #cd8151 !important; /* Forces text color switch to #CD8151 */
   padding-left: 22px !important; /* Clean kinetic motion slide shift */
 }
 
 /* --- Global Icons and Material Chevron Expanders on Hover --- */
 .md-icon:hover,
 .md-nav__item .md-nav__link:hover .md-icon {
-  color: #CD8151 !important;
+  color: #cd8151 !important;
   transform: scale(1.1);
   transition: all 0.2s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 /* --- Table of Contents (Right Sidebar) Link Hover States --- */
 .md-nav--toc .md-nav__link:hover {
-  color: #CD8151 !important;
+  color: #cd8151 !important;
 }
 
 /* --- High-Density Horizontal Flex Grid Layout --- */
@@ -226,16 +238,18 @@ pre, code, .api-block {
 
 /* --- Elevated Pure White Component Cards --- */
 .md-typeset .custom-card {
-  background-color: #FFFFFF !important;  /* Pure white canvas cards */
+  background-color: #ffffff !important; /* Pure white canvas cards */
   flex: 1 1 calc(33.333% - 20px) !important; /* Spreads 3 cards horizontally per row */
-  min-width: 260px !important;            /* Safe collapse boundary for smaller browser frames */
+  min-width: 260px !important; /* Safe collapse boundary for smaller browser frames */
   border-radius: 14px !important;
   box-shadow: 0px 8px 24px rgba(45, 26, 16, 0.06) !important;
   padding: 1.5em !important;
   margin: 0 !important;
   border: 1px solid rgba(66, 40, 26, 0.08) !important;
-  border-top: 4px solid #CD8151 !important; /* Keeps an accent line highlighting your terracotta brand */
-  transition: transform 0.25s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.25s ease !important;
+  border-top: 4px solid #cd8151 !important; /* Keeps an accent line highlighting your terracotta brand */
+  transition:
+    transform 0.25s cubic-bezier(0.25, 1, 0.5, 1),
+    box-shadow 0.25s ease !important;
   display: flex !important;
   flex-direction: column !important;
 }
@@ -247,7 +261,7 @@ pre, code, .api-block {
 
 /* Force strict dark chocolate typography matching #42281A inside white blocks */
 .md-typeset .custom-card h3 {
-  color: #42281A !important;
+  color: #42281a !important;
   font-weight: 700 !important;
   margin-top: 0 !important;
   margin-bottom: 0.5em !important;
@@ -255,7 +269,7 @@ pre, code, .api-block {
 }
 
 .md-typeset .custom-card p {
-  color: #42281A !important;
+  color: #42281a !important;
   line-height: 1.5 !important;
   margin: 0 !important;
   font-size: 0.95em !important;
