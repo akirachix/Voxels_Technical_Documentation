@@ -94,7 +94,105 @@ document.addEventListener('DOMContentLoaded', function() {
 
 <div class="api-section">
 
-<div class="section-title">Database Schema</div>
+<div class="section-title">API Overview</div>
+
+<p>Framework: FastAPI</p>
+<p>Version: v1</p>
+<p>Base Path: /</p>
+
+</div>
+
+<div class="api-section">
+
+<div class="section-title">Hosted API</div>
+
+<p>Production URL: https://maraguard-3686f239afe8.herokuapp.com</p>
+
+<ul>
+  <li><a href="https://maraguard-3686f239afe8.herokuapp.com/docs" target="_blank">Swagger UI</a></li>
+  <li><a href="https://maraguard-3686f239afe8.herokuapp.com/redoc" target="_blank">ReDoc</a></li>
+</ul>
+
+</div>
+
+<div class="api-section">
+
+<div class="section-title">Prerequisites</div>
+
+<p>Python 3.12+, PostgreSQL, Redis (optional).</p>
+
+</div>
+
+<div class="api-section">
+
+<div class="section-title">Setup and Installation</div>
+
+<p>1. Clone repo and cd into project</p>
+<p>2. python -m venv env && source env/bin/activate</p>
+<p>3. pip install -r requirements.txt</p>
+<p>4. Create .env with DATABASE_URL, SECRET_KEY, REDIS_URL, MAIL_*</p>
+<p>5. alembic upgrade head</p>
+<p>6. python main.py</p>
+
+</div>
+
+<div class="api-section">
+
+<div class="section-title">Architecture Layers</div>
+
+<p>Router: API routes and endpoint definitions</p>
+<p>Schema: Pydantic request/response validation</p>
+<p>Service: Business logic and orchestration</p>
+<p>Repository: Database access and queries</p>
+
+</div>
+
+<div class="api-section">
+
+<div class="section-title">API Conventions</div>
+
+<p>Base URL: https://maraguard-3686f239afe8.herokuapp.com</p>
+
+<p>Authentication: JWT Bearer token in Authorization header</p>
+
+<p>Status Codes: 200, 201, 400, 401, 404, 429, 500</p>
+
+</div>
+
+<div class="api-section">
+
+<div class="section-title">Endpoint Categories</div>
+
+<h3 class="subsection-title">Authentication & User Management</h3>
+
+<p>POST /rangers/register - Register a new ranger</p>
+<p>POST /rangers/login - Login, returns JWT token</p>
+<p>GET /rangers/me - Get current ranger profile</p>
+<p>GET /rangers/ - List all rangers (admin)</p>
+
+<h3 class="subsection-title">Password Management</h3>
+
+<p>POST /rangers/forgot-password - Initiate password reset</p>
+<p>POST /rangers/verify-reset-code - Verify reset code</p>
+<p>POST /rangers/reset-password - Reset password</p>
+
+<h3 class="subsection-title">Detection Management</h3>
+
+<p>POST /detection - Log a new lion detection</p>
+<p>GET /detection - List detections (filter by date)</p>
+
+<h3 class="subsection-title">Telemetry Management</h3>
+
+<p>POST /telemetry/ - Create a new telemetry log</p>
+<p>GET /telemetry/ - Read all telemetry logs</p>
+<p>PATCH /telemetry/{log_id} - Update a telemetry log</p>
+<p>DELETE /telemetry/{log_id} - Delete a telemetry log</p>
+
+</div>
+
+<div class="api-section">
+
+<div class="section-title">Data Models</div>
 
 <p>PostgreSQL database with SQLAlchemy 2.0 ORM and Alembic migrations.</p>
 
@@ -133,23 +231,6 @@ erDiagram
 
 </div>
 </div>
-
-</div>
-
-<div class="api-section">
-
-<div class="section-title">Live API Docs</div>
-
-<ul>
-  <li><a href="https://maraguard-3686f239afe8.herokuapp.com/docs" target="_blank">Swagger UI</a></li>
-  <li><a href="https://maraguard-3686f239afe8.herokuapp.com/redoc" target="_blank">ReDoc</a></li>
-</ul>
-
-</div>
-
-<div class="api-section">
-
-<div class="section-title">Data Models</div>
 
 <h3 class="subsection-title">Ranger</h3>
 
@@ -273,23 +354,27 @@ erDiagram
 
 <div class="api-section">
 
-<div class="section-title">Libraries & Methods</div>
+<div class="section-title">Testing and QA</div>
 
-<p>FastAPI, PostgreSQL, SQLAlchemy 2.0, JWT (HS256), Redis, Alembic, Bcrypt, Pydantic.</p>
+<p>pytest for unit tests.</p>
 
-<p>POST, GET, PATCH, DELETE methods with JWT authentication and IP-based rate limiting.</p>
+<p>Run tests:</p>
+
+```bash
+pytest
+```
 
 </div>
 
 <div class="api-section">
 
-<div class="section-title">Testing</div>
+<div class="section-title">Code Standards</div>
 
-<p>pytest for unit tests. Run with:</p>
+<p>Naming: snake_case for variables/functions/files, PascalCase for classes/models.</p>
 
-```bash
-pytest
-```
+<p>Structure: routers, schemas, services, repositories in separate files.</p>
+
+<p>Commits: conventional commits (feat, fix, docs, etc.)</p>
 
 </div>
 
