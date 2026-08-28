@@ -245,26 +245,28 @@
 .styled-table {
   width: 100%;
   border-collapse: collapse;
-  font-size: 0.95em;
-  min-width: 600px;
+  font-size: 0.85em;
+  min-width: 400px;
 }
 
 .styled-table thead {
-  background: linear-gradient(135deg, #2d1a10 0%, #3d2a1e 100%);
+  background: #FFFFFF !important;
 }
 
 .styled-table th {
-  color: #ffffff !important;
+  color: #2D1A10 !important;
   font-weight: 600 !important;
-  padding: 1em !important;
+  padding: 0.8em 1em !important;
   text-align: left !important;
-  border-bottom: 2px solid #cd8151 !important;
+  border-bottom: 2px solid #CD8151 !important;
+  background: #FFFFFF !important;
 }
 
 .styled-table td {
-  padding: 0.9em 1em !important;
+  padding: 0.7em 1em !important;
   border-bottom: 1px solid rgba(66, 40, 26, 0.06) !important;
-  color: #2d1a10 !important;
+  color: #2D1A10 !important;
+  background: #FFFFFF !important;
   transition: all 0.3s ease !important;
 }
 
