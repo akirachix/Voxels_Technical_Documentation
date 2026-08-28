@@ -112,7 +112,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <div class="section-title">Hosted API</div>
 
 <h3 class="subsection-title">Production URL</h3>
-<p>https://maraguard-3686f239afe8.herokuapp.com</p>
+<p><a href="https://maraguard-3686f239afe8.herokuapp.com/docs" target="_blank">https://maraguard-3686f239afe8.herokuapp.com</a></p>
 
 <h3 class="subsection-title">Documentation</h3>
 
