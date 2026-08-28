@@ -357,33 +357,26 @@
 .api-page pre,
 .api-page code {
   border-radius: 10px !important;
-  border: 1px solid #e8e4e1 !important;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06) !important;
+  border: 1px solid #E8E4E1 !important;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06) !important;
   transition: all 0.3s ease !important;
   position: relative;
+  color: #2D1A10 !important;
+  background-color: #F8F6F5 !important;
 }
 
 .api-page pre:hover,
 .api-page code:hover {
-  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.1) !important;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.1) !important;
   transform: translateY(-1px);
 }
 
 .api-page pre code {
-  color: #2d1a10 !important;
-  background: #f8f6f5 !important;
+  color: #2D1A10 !important;
+  background-color: transparent !important;
   display: block;
   padding: 1em !important;
   overflow-x: auto;
-}
-
-.api-page code {
-  color: #2d1a10 !important;
-  background: #f5f5f5 !important;
-  padding: 2px 6px !important;
-  border-radius: 4px !important;
-  font-family: "Fira Mono", "Consolas", monospace !important;
-  font-size: 0.9em !important;
 }
 
 .api-section ul,
