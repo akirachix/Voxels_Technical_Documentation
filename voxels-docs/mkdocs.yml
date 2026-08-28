@@ -1,0 +1,46 @@
+site_name: Voxels Technical Documentation
+
+theme:
+  name: material
+  logo: images/logo.png  # This is the baseline logo file
+  favicon: images/icon-logo.png
+  palette:
+    - scheme: default
+      primary: custom
+      accent: custom
+  font:
+    text: Poppins
+    code: Fira Mono
+  features:
+    - navigation.sections
+    - navigation.instant
+    - navigation.expand
+    - toc.integrate
+    - search.highlight
+    - search.suggest
+    - search.share
+
+extra_css:
+  - styles/extra.css
+
+nav:
+  - Home: index.md
+  - Overview: overview.md
+  - Getting Started: getting-started.md
+  - How It Works: how-it-works.md
+  - Features: features.md
+  - Architecture: architecture.md
+  - Frontend Mobile: mobile-development.md
+  - Frontend Web: dashboard-web.md
+  - Backend: backend.md
+  - IoT Hardware Prototype: hardware-prototype.md
+  - AI: ai.md
+  - Q/A Process: qa-process.md
+  - Security Implemented: security.md
+  - Deployment Process: deployment-process.md
+  - Code Standards: code-standards.md
+  - Brand Guideline: brand-guideline.md
+
+markdown_extensions:
+  - pymdownx.tasklist:
+      custom_checkbox: true
