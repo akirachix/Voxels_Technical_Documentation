@@ -28,7 +28,6 @@ body {
   border-bottom: 1px solid #42281a;
 }
 
-/* Animations */
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -58,7 +57,7 @@ body {
 .md-content {
   background-color: #2d1a10 !important;
   border-radius: 16px;
-  padding: 2.5em !important;
+  padding: 4em !important;
   border: 1px solid #42281a;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
   animation: fadeInUp 0.4s cubic-bezier(0.25, 1, 0.5, 1) both;
@@ -193,21 +192,18 @@ code,
   color: #ffffff !important;
 }
 
-/* --- Global Body Link Hover States --- */
 .md-typeset a:hover {
   color: #cd8151 !important;
   text-decoration: underline;
   transition: color 0.2s ease-in-out;
 }
 
-/* --- Left Side Panel Navigation Link Hover States --- */
 .md-nav--primary .md-nav__link:hover {
   background-color: rgba(205, 129, 81, 0.08) !important;
   color: #cd8151 !important;
   padding-left: 22px !important;
 }
 
-/* --- Global Icons and Material Chevron Expanders on Hover --- */
 .md-icon:hover,
 .md-nav__item .md-nav__link:hover .md-icon {
   color: #cd8151 !important;
