@@ -1,5 +1,3 @@
-
-
 Mara Guard is an automated, edge-AI-powered wildlife conflict mitigation system designed to protect livestock and prevent retaliatory lion killings in the Maasai Mara National Reserve. 
 
 The entire system operates as a **layered defense network**, combining localized sensing, edge intelligence, autonomous deterrents, and long-range telemetry to intercept threats before conflict occurs.
@@ -46,36 +44,36 @@ If a high-confidence lion profile match is confirmed, the device fires an immedi
     <table style="width: 100%; border-collapse: collapse; margin-top: 12px;">
       <thead>
         <tr style="border-bottom: 2px solid #CD8151; text-align: left;">
-          <th style="color: #2D1A10 !important; padding: 8px;">Structural Layer</th>
-          <th style="color: #2D1A10 !important; padding: 8px;">Component Used</th>
-          <th style="color: #2D1A10 !important; padding: 8px;">Operational Threshold</th>
+          <th style="color: #FFFFFF!important; padding: 8px;">Structural Layer</th>
+          <th style="color: #FFFFFF!important; padding: 8px;">Component Used</th>
+          <th style="color: #FFFFFF!important; padding: 8px;">Operational Threshold</th>
         </tr>
       </thead>
       <tbody>
         <tr style="border-bottom: 1px solid #D4C5BD;">
-          <td style="color: #42281A !important; padding: 8px;"><strong>Power Supply</strong></td>
-          <td style="color: #42281A !important; padding: 8px;">Photovoltaic Solar Array</td>
-          <td style="color: #42281A !important; padding: 8px;">24/7 autonomous battery cycle</td>
+          <td style="color: #FFFFFF !important; padding: 8px;"><strong>Power Supply</strong></td>
+          <td style="color: #FFFFFF !important; padding: 8px;">Photovoltaic Solar Array</td>
+          <td style="color: #FFFFFF !important; padding: 8px;">24/7 autonomous battery cycle</td>
         </tr>
         <tr style="border-bottom: 1px solid #D4C5BD;">
-          <td style="color: #42281A !important; padding: 8px;"><strong>Telemetry Node</strong></td>
-          <td style="color: #42281A !important; padding: 8px;">Point-to-Point LoRa Transceiver</td>
-          <td style="color: #42281A !important; padding: 8px;">Direct radio packet broadcasting</td>
+          <td style="color: #FFFFFF !important; padding: 8px;"><strong>Telemetry Node</strong></td>
+          <td style="color: #FFFFFF!important; padding: 8px;">Point-to-Point LoRa Transceiver</td>
+          <td style="color: #FFFFFF!important; padding: 8px;">Direct radio packet broadcasting</td>
         </tr>
         <tr style="border-bottom: 1px solid #D4C5BD;">
-          <td style="color: #42281A !important; padding: 8px;"><strong>Power Tracking</strong></td>
-          <td style="color: #42281A !important; padding: 8px;">INA219 Sensor Module</td>
-          <td style="color: #42281A !important; padding: 8px;">Real-time voltage & battery health parsing</td>
+          <td style="color: #FFFFFF!important; padding: 8px;"><strong>Power Tracking</strong></td>
+          <td style="color: #FFFFFF !important; padding: 8px;">INA219 Sensor Module</td>
+          <td style="color: #FFFFFF !important; padding: 8px;">Real-time voltage & battery health parsing</td>
         </tr>
         <tr style="border-bottom: 1px solid #D4C5BD;">
-          <td style="color: #42281A !important; padding: 8px;"><strong>Local Host</strong></td>
-          <td style="color: #42281A !important; padding: 8px;">Raspberry Pi 5</td>
-          <td style="color: #42281A !important; padding: 8px;">Localized script and model execution</td>
+          <td style="color: #FFFFFF!important; padding: 8px;"><strong>Local Host</strong></td>
+          <td style="color: #FFFFFF!important; padding: 8px;">Raspberry Pi 5</td>
+          <td style="color:#FFFFFF!important; padding: 8px;">Localized script and model execution</td>
         </tr>
         <tr style="border-bottom: 1px solid #D4C5BD;">
-          <td style="color: #42281A !important; padding: 8px;"><strong>AI Classifier</strong></td>
-          <td style="color: #42281A !important; padding: 8px;">Custom YOLOv8 Model Framework</td>
-          <td style="color: #42281A !important; padding: 8px;">Multi-object classification & density tracking</td>
+          <td style="color: #FFFFFF!important; padding: 8px;"><strong>AI Classifier</strong></td>
+          <td style="color: #FFFFFF !important; padding: 8px;">Custom YOLOv8 Model Framework</td>
+          <td style="color: #FFFFFF!important; padding: 8px;">Multi-object classification & density tracking</td>
         </tr>
       </tbody>
     </table>
