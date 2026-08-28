@@ -78,11 +78,6 @@
 
 ---
 
-## Platform Highlights
-
-<div style="text-align: center; margin: 2em 0;">
-  <img src="images/deployment-diagram.png" alt="Mara Guard End-to-End System Infrastructure Layout" class="platform-img">
-</div>
 
 ---
 
