@@ -105,6 +105,9 @@ document.addEventListener('DOMContentLoaded', function() {
 <h3 class="subsection-title">Base Path</h3>
 <p>/</p>
 
+<h3 class="subsection-title">Authentication</h3>
+<p>JWT Bearer token in Authorization header</p>
+
 </div>
 
 <div class="api-section">
@@ -181,11 +184,38 @@ document.addEventListener('DOMContentLoaded', function() {
 <h3 class="subsection-title">Base URL</h3>
 <p>https://maraguard-3686f239afe8.herokuapp.com</p>
 
-<h3 class="subsection-title">Authentication</h3>
-<p>JWT Bearer token in Authorization header</p>
-
 <h3 class="subsection-title">Status Codes</h3>
-<p>200, 201, 400, 401, 404, 429, 500</p>
+
+<div class="status-grid">
+  <div class="status-item">
+    <span class="status-code">200 OK</span>
+    <span class="status-desc">Request succeeded</span>
+  </div>
+  <div class="status-item">
+    <span class="status-code">201 Created</span>
+    <span class="status-desc">Resource created successfully</span>
+  </div>
+  <div class="status-item">
+    <span class="status-code">400 Bad Request</span>
+    <span class="status-desc">Invalid input data</span>
+  </div>
+  <div class="status-item">
+    <span class="status-code">401 Unauthorized</span>
+    <span class="status-desc">Missing or invalid JWT token</span>
+  </div>
+  <div class="status-item">
+    <span class="status-code">404 Not Found</span>
+    <span class="status-desc">Resource not found</span>
+  </div>
+  <div class="status-item">
+    <span class="status-code">429 Too Many Requests</span>
+    <span class="status-desc">Rate limit exceeded</span>
+  </div>
+  <div class="status-item">
+    <span class="status-code">500 Internal Server Error</span>
+    <span class="status-desc">Unexpected backend error</span>
+  </div>
+</div>
 
 </div>
 

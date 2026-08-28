@@ -372,6 +372,9 @@
 .api-page pre code {
   color: #2d1a10 !important;
   background: #f8f6f5 !important;
+  display: block;
+  padding: 1em !important;
+  overflow-x: auto;
 }
 
 .api-page code {
