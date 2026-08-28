@@ -165,28 +165,89 @@ document.addEventListener('DOMContentLoaded', function() {
 
 <h3 class="subsection-title">Authentication & User Management</h3>
 
-<p>POST /rangers/register - Register a new ranger</p>
-<p>POST /rangers/login - Login, returns JWT token</p>
-<p>GET /rangers/me - Get current ranger profile</p>
-<p>GET /rangers/ - List all rangers (admin)</p>
+<div class="endpoint-row">
+  <span class="method method-post">POST</span>
+  <span class="path">/rangers/register</span>
+  <span class="desc">Register a new ranger</span>
+</div>
+
+<div class="endpoint-row">
+  <span class="method method-post">POST</span>
+  <span class="path">/rangers/login</span>
+  <span class="desc">Login, returns JWT token</span>
+</div>
+
+<div class="endpoint-row">
+  <span class="method method-get">GET</span>
+  <span class="path">/rangers/me</span>
+  <span class="desc">Get current ranger profile</span>
+</div>
+
+<div class="endpoint-row">
+  <span class="method method-get">GET</span>
+  <span class="path">/rangers/</span>
+  <span class="desc">List all rangers (admin)</span>
+</div>
 
 <h3 class="subsection-title">Password Management</h3>
 
-<p>POST /rangers/forgot-password - Initiate password reset</p>
-<p>POST /rangers/verify-reset-code - Verify reset code</p>
-<p>POST /rangers/reset-password - Reset password</p>
+<div class="endpoint-row">
+  <span class="method method-post">POST</span>
+  <span class="path">/rangers/forgot-password</span>
+  <span class="desc">Initiate password reset</span>
+</div>
+
+<div class="endpoint-row">
+  <span class="method method-post">POST</span>
+  <span class="path">/rangers/verify-reset-code</span>
+  <span class="desc">Verify reset code</span>
+</div>
+
+<div class="endpoint-row">
+  <span class="method method-post">POST</span>
+  <span class="path">/rangers/reset-password</span>
+  <span class="desc">Reset password</span>
+</div>
 
 <h3 class="subsection-title">Detection Management</h3>
 
-<p>POST /detection - Log a new lion detection</p>
-<p>GET /detection - List detections (filter by date)</p>
+<div class="endpoint-row">
+  <span class="method method-post">POST</span>
+  <span class="path">/detection</span>
+  <span class="desc">Log a new lion detection</span>
+</div>
+
+<div class="endpoint-row">
+  <span class="method method-get">GET</span>
+  <span class="path">/detection</span>
+  <span class="desc">List detections (filter by date)</span>
+</div>
 
 <h3 class="subsection-title">Telemetry Management</h3>
 
-<p>POST /telemetry/ - Create a new telemetry log</p>
-<p>GET /telemetry/ - Read all telemetry logs</p>
-<p>PATCH /telemetry/{log_id} - Update a telemetry log</p>
-<p>DELETE /telemetry/{log_id} - Delete a telemetry log</p>
+<div class="endpoint-row">
+  <span class="method method-post">POST</span>
+  <span class="path">/telemetry/</span>
+  <span class="desc">Create a new telemetry log</span>
+</div>
+
+<div class="endpoint-row">
+  <span class="method method-get">GET</span>
+  <span class="path">/telemetry/</span>
+  <span class="desc">Read all telemetry logs</span>
+</div>
+
+<div class="endpoint-row">
+  <span class="method method-patch">PATCH</span>
+  <span class="path">/telemetry/{log_id}</span>
+  <span class="desc">Update a telemetry log</span>
+</div>
+
+<div class="endpoint-row">
+  <span class="method method-delete">DELETE</span>
+  <span class="path">/telemetry/{log_id}</span>
+  <span class="desc">Delete a telemetry log</span>
+</div>
 
 </div>
 
