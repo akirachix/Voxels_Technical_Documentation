@@ -22,6 +22,7 @@ theme:
 
 extra_css:
   - styles/extra.css
+  - styles/api-reference.css
 
 nav:
   - Home: index.md
@@ -44,3 +45,7 @@ nav:
 markdown_extensions:
   - pymdownx.tasklist:
       custom_checkbox: true
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
