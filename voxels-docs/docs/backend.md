@@ -475,17 +475,17 @@ erDiagram
 
 </div>
 
-<div class="api-section">
+<div class="api-section>
 
 <div class="section-title">Testing and QA</div>
 
 <h3 class="subsection-title">Framework</h3>
-<p>pytest for unit tests.</p>
+<p>Playwright for end-to-end testing.</p>
 
 <h3 class="subsection-title">Run Tests</h3>
 
 ```bash
-pytest
+playwright test
 ```
 
 </div>
