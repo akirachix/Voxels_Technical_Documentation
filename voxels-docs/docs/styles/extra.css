@@ -53,6 +53,8 @@ body {
   display: flex;
   gap: 28px;
   margin-top: 24px;
+  width: 100%;
+  max-width: 100%;
 }
 
 .md-content {
@@ -62,7 +64,8 @@ body {
   border: 1px solid #42281a;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
   animation: fadeInUp 0.4s cubic-bezier(0.25, 1, 0.5, 1) both;
-  overflow-x: hidden;
+  width: 100%;
+  max-width: 100%;
 }
 
 .md-sidebar.md-sidebar--primary,
@@ -203,14 +206,9 @@ code,
 
 /* --- Left Side Panel Navigation Link Hover States --- */
 .md-nav--primary .md-nav__link:hover {
-  background-color: rgba(
-    205,
-    129,
-    81,
-    0.08
-  ) !important; /* Soft terracotta background tint */
-  color: #cd8151 !important; /* Forces text color switch to #CD8151 */
-  padding-left: 22px !important; /* Clean kinetic motion slide shift */
+  background-color: rgba(205, 129, 81, 0.08) !important;
+  color: #cd8151 !important;
+  padding-left: 22px !important;
 }
 
 /* --- Global Icons and Material Chevron Expanders on Hover --- */
@@ -221,12 +219,10 @@ code,
   transition: all 0.2s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-/* --- Table of Contents (Right Sidebar) Link Hover States --- */
 .md-nav--toc .md-nav__link:hover {
   color: #cd8151 !important;
 }
 
-/* --- High-Density Horizontal Flex Grid Layout --- */
 .md-typeset .custom-card-container {
   display: flex !important;
   flex-direction: row !important;
@@ -236,17 +232,16 @@ code,
   width: 100% !important;
 }
 
-/* --- Elevated Pure White Component Cards --- */
 .md-typeset .custom-card {
-  background-color: #ffffff !important; /* Pure white canvas cards */
-  flex: 1 1 calc(33.333% - 20px) !important; /* Spreads 3 cards horizontally per row */
-  min-width: 260px !important; /* Safe collapse boundary for smaller browser frames */
+  background-color: #ffffff !important;
+  flex: 1 1 calc(33.333% - 20px) !important;
+  min-width: 260px !important;
   border-radius: 14px !important;
   box-shadow: 0px 8px 24px rgba(45, 26, 16, 0.06) !important;
   padding: 1.5em !important;
   margin: 0 !important;
   border: 1px solid rgba(66, 40, 26, 0.08) !important;
-  border-top: 4px solid #cd8151 !important; /* Keeps an accent line highlighting your terracotta brand */
+  border-top: 4px solid #cd8151 !important;
   transition:
     transform 0.25s cubic-bezier(0.25, 1, 0.5, 1),
     box-shadow 0.25s ease !important;
@@ -259,7 +254,6 @@ code,
   box-shadow: 0px 14px 32px rgba(66, 40, 26, 0.12) !important;
 }
 
-/* Force strict dark chocolate typography matching #42281A inside white blocks */
 .md-typeset .custom-card h3 {
   color: #42281a !important;
   font-weight: 700 !important;
@@ -276,8 +270,7 @@ code,
   opacity: 0.9 !important;
 }
 
-/* Responsive mobile wrap fallback override */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 868px) {
   .md-typeset .custom-card-container {
     flex-direction: column !important;
   }
