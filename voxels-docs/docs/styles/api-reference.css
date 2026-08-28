@@ -381,12 +381,20 @@
 
 .api-section ul,
 .api-section ol {
-  color: #2d1a10 !important;
+  color: #FFFFFF !important;
 }
 
 .api-section li {
-  color: #2d1a10 !important;
+  color: #FFFFFF !important;
   line-height: 1.8;
+}
+
+.api-section a {
+  color: #CD8151 !important;
+}
+
+.api-section strong {
+  color: #FFFFFF !important;
 }
 
 @keyframes heroFadeIn {
