@@ -96,9 +96,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
 <div class="section-title">API Overview</div>
 
-<p>Framework: FastAPI</p>
-<p>Version: v1</p>
-<p>Base Path: /</p>
+<h3 class="subsection-title">Framework</h3>
+<p>FastAPI</p>
+
+<h3 class="subsection-title">Version</h3>
+<p>v1</p>
+
+<h3 class="subsection-title">Base Path</h3>
+<p>/</p>
 
 </div>
 
@@ -106,7 +111,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
 <div class="section-title">Hosted API</div>
 
-<p>Production URL: https://maraguard-3686f239afe8.herokuapp.com</p>
+<h3 class="subsection-title">Production URL</h3>
+<p>https://maraguard-3686f239afe8.herokuapp.com</p>
+
+<h3 class="subsection-title">Documentation</h3>
 
 <ul>
   <li><a href="https://maraguard-3686f239afe8.herokuapp.com/docs" target="_blank">Swagger UI</a></li>
@@ -119,6 +127,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 <div class="section-title">Prerequisites</div>
 
+<h3 class="subsection-title">Requirements</h3>
 <p>Python 3.12+, PostgreSQL, Redis (optional).</p>
 
 </div>
@@ -127,12 +136,23 @@ document.addEventListener('DOMContentLoaded', function() {
 
 <div class="section-title">Setup and Installation</div>
 
-<p>1. Clone repo and cd into project</p>
-<p>2. python -m venv env && source env/bin/activate</p>
-<p>3. pip install -r requirements.txt</p>
-<p>4. Create .env with DATABASE_URL, SECRET_KEY, REDIS_URL, MAIL_*</p>
-<p>5. alembic upgrade head</p>
-<p>6. python main.py</p>
+<h3 class="subsection-title">Step 1</h3>
+<p>Clone repo and cd into project</p>
+
+<h3 class="subsection-title">Step 2</h3>
+<p>python -m venv env && source env/bin/activate</p>
+
+<h3 class="subsection-title">Step 3</h3>
+<p>pip install -r requirements.txt</p>
+
+<h3 class="subsection-title">Step 4</h3>
+<p>Create .env with DATABASE_URL, SECRET_KEY, REDIS_URL, MAIL_*</p>
+
+<h3 class="subsection-title">Step 5</h3>
+<p>alembic upgrade head</p>
+
+<h3 class="subsection-title">Step 6</h3>
+<p>python main.py</p>
 
 </div>
 
@@ -140,10 +160,17 @@ document.addEventListener('DOMContentLoaded', function() {
 
 <div class="section-title">Architecture Layers</div>
 
-<p>Router: API routes and endpoint definitions</p>
-<p>Schema: Pydantic request/response validation</p>
-<p>Service: Business logic and orchestration</p>
-<p>Repository: Database access and queries</p>
+<h3 class="subsection-title">Router</h3>
+<p>API routes and endpoint definitions</p>
+
+<h3 class="subsection-title">Schema</h3>
+<p>Pydantic request/response validation</p>
+
+<h3 class="subsection-title">Service</h3>
+<p>Business logic and orchestration</p>
+
+<h3 class="subsection-title">Repository</h3>
+<p>Database access and queries</p>
 
 </div>
 
@@ -151,11 +178,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
 <div class="section-title">API Conventions</div>
 
-<p>Base URL: https://maraguard-3686f239afe8.herokuapp.com</p>
+<h3 class="subsection-title">Base URL</h3>
+<p>https://maraguard-3686f239afe8.herokuapp.com</p>
 
-<p>Authentication: JWT Bearer token in Authorization header</p>
+<h3 class="subsection-title">Authentication</h3>
+<p>JWT Bearer token in Authorization header</p>
 
-<p>Status Codes: 200, 201, 400, 401, 404, 429, 500</p>
+<h3 class="subsection-title">Status Codes</h3>
+<p>200, 201, 400, 401, 404, 429, 500</p>
 
 </div>
 
@@ -254,6 +284,8 @@ document.addEventListener('DOMContentLoaded', function() {
 <div class="api-section">
 
 <div class="section-title">Data Models</div>
+
+<h3 class="subsection-title">Database Schema</h3>
 
 <p>PostgreSQL database with SQLAlchemy 2.0 ORM and Alembic migrations.</p>
 
@@ -417,9 +449,10 @@ erDiagram
 
 <div class="section-title">Testing and QA</div>
 
+<h3 class="subsection-title">Framework</h3>
 <p>pytest for unit tests.</p>
 
-<p>Run tests:</p>
+<h3 class="subsection-title">Run Tests</h3>
 
 ```bash
 pytest
@@ -431,11 +464,14 @@ pytest
 
 <div class="section-title">Code Standards</div>
 
-<p>Naming: snake_case for variables/functions/files, PascalCase for classes/models.</p>
+<h3 class="subsection-title">Naming</h3>
+<p>snake_case for variables/functions/files, PascalCase for classes/models.</p>
 
-<p>Structure: routers, schemas, services, repositories in separate files.</p>
+<h3 class="subsection-title">Structure</h3>
+<p>routers, schemas, services, repositories in separate files.</p>
 
-<p>Commits: conventional commits (feat, fix, docs, etc.)</p>
+<h3 class="subsection-title">Commits</h3>
+<p>conventional commits (feat, fix, docs, etc.)</p>
 
 </div>
 
@@ -443,15 +479,22 @@ pytest
 
 <div class="section-title">Deployment</div>
 
-<p>Platform: Heroku (Staging & Production)</p>
+<h3 class="subsection-title">Platform</h3>
+<p>Heroku (Staging & Production)</p>
 
-<p>Branch: Deploy from main</p>
+<h3 class="subsection-title">Branch</h3>
+<p>Deploy from main</p>
 
-<p>Environment variables managed in Heroku dashboard.</p>
+<h3 class="subsection-title">Environment Variables</h3>
+<p>Managed in Heroku dashboard.</p>
 
+<h3 class="subsection-title">Scaling</h3>
 <p>Auto-scaling via Heroku dynos.</p>
 
+<h3 class="subsection-title">Rollback</h3>
 <p>Rollback to previous release via Heroku dashboard.</p>
+
+</div>
 
 </div>
 
