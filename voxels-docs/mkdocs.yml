@@ -2,12 +2,12 @@ site_name: Voxels Technical Documentation
 
 theme:
   name: material
-  logo: images/logo.png  # This is the baseline logo file
+  logo: images/logo.png
   favicon: images/icon-logo.png
   palette:
-    - scheme: default
-      primary: custom
-      accent: custom
+    - scheme: slate
+      primary: brown
+      accent: amber
   font:
     text: Poppins
     code: Fira Mono
@@ -22,11 +22,11 @@ theme:
 
 extra_css:
   - styles/extra.css
+  - styles/api-reference.css
 
 nav:
   - Home: index.md
   - Overview: overview.md
-  - Getting Started: getting-started.md
   - How It Works: how-it-works.md
   - Features: features.md
   - Architecture: architecture.md
@@ -44,3 +44,11 @@ nav:
 markdown_extensions:
   - pymdownx.tasklist:
       custom_checkbox: true
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+  - pymdownx.superfences

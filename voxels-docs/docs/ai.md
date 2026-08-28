@@ -163,37 +163,37 @@ results = model.predict(source='/content/Lion-1/valid/images', save=True, conf=0
     <p style="color: #42281A !important;">Evaluation passes executed against 81 reference validation images mapping 102 threat instances yielded the following structural accuracy rates:</p>
     <table style="width: 100%; border-collapse: collapse; margin-top: 12px;">
       <thead>
-        <tr style="border-bottom: 2px solid #CD8151; text-align: left;">
-          <th style="color: #2D1A10 !important; padding: 8px;">Tracking Parameter</th>
-          <th style="color: #2D1A10 !important; padding: 8px;">Technical Metric Name</th>
-          <th style="color: #2D1A10 !important; padding: 8px;">Realized Operational Score</th>
-          <th style="color: #2D1A10 !important; padding: 8px;">Performance Output</th>
+        <tr style="border-bottom: 2px solid #FFFFFF; text-align: left;">
+          <th style="color:#FFFFFF !important; padding: 8px;">Tracking Parameter</th>
+          <th style="color: #FFFFFF !important; padding: 8px;">Technical Metric Name</th>
+          <th style="color: #FFFFFF!important; padding: 8px;">Realized Operational Score</th>
+          <th style="color: #FFFFFF !important; padding: 8px;">Performance Output</th>
         </tr>
       </thead>
       <tbody>
         <tr style="border-bottom: 1px solid #D4C5BD;">
-          <td style="color: #42281A !important; padding: 8px;"><strong>P</strong></td>
-          <td style="color: #42281A !important; padding: 8px;">Box Precision Metric</td>
-          <td style="color: #42281A !important; padding: 8px;"><code style="color: #CD8151 !important; background: transparent !important;">0.865</code></td>
-          <td style="color: #42281A !important; padding: 8px;">86.5% Accuracy</td>
+          <td style="color: #FFFFFF !important; padding: 8px;"><strong>P</strong></td>
+          <td style="color: #FFFFFF !important; padding: 8px;">Box Precision Metric</td>
+          <td style="color: #FFFFFF !important; padding: 8px;"><code style="color: #CD8151 !important; background: transparent !important;">0.865</code></td>
+          <td style="color:#FFFFFF !important; padding: 8px;">86.5% Accuracy</td>
         </tr>
         <tr style="border-bottom: 1px solid #D4C5BD;">
-          <td style="color: #42281A !important; padding: 8px;"><strong>R</strong></td>
-          <td style="color: #42281A !important; padding: 8px;">Recall Performance Value</td>
-          <td style="color: #42281A !important; padding: 8px;"><code style="color: #CD8151 !important; background: transparent !important;">0.775</code></td>
-          <td style="color: #42281A !important; padding: 8px;">77.5% True Positive Catch Rate</td>
+          <td style="color: #FFFFFF !important; padding: 8px;"><strong>R</strong></td>
+          <td style="color: #FFFFFF !important; padding: 8px;">Recall Performance Value</td>
+          <td style="color: #FFFFFF !important; padding: 8px;"><code style="color: #CD8151 !important; background: transparent !important;">0.775</code></td>
+          <td style="color: #FFFFFF !important; padding: 8px;">77.5% True Positive Catch Rate</td>
         </tr>
         <tr style="border-bottom: 1px solid #D4C5BD;">
-          <td style="color: #42281A !important; padding: 8px;"><strong>mAP@50</strong></td>
-          <td style="color: #42281A !important; padding: 8px;">Mean Average Precision Threshold</td>
-          <td style="color: #42281A !important; padding: 8px;"><code style="color: #CD8151 !important; background: transparent !important;">0.884</code></td>
-          <td style="color: #42281A !important; padding: 8px;">88.4% Intersection Benchmark</td>
+          <td style="color: #FFFFFF !important; padding: 8px;"><strong>mAP@50</strong></td>
+          <td style="color:#FFFFFF !important; padding: 8px;">Mean Average Precision Threshold</td>
+          <td style="color: #FFFFFF !important; padding: 8px;"><code style="color: #CD8151 !important; background: transparent !important;">0.884</code></td>
+          <td style="color: #FFFFFF !important; padding: 8px;">88.4% Intersection Benchmark</td>
         </tr>
         <tr style="border-bottom: 1px solid #D4C5BD;">
-          <td style="color: #42281A !important; padding: 8px;"><strong>mAP@50-95</strong></td>
-          <td style="color: #42281A !important; padding: 8px;">Deep Positional Spatial Tracking</td>
-          <td style="color: #42281A !important; padding: 8px;"><code style="color: #CD8151 !important; background: transparent !important;">0.513</code></td>
-          <td style="color: #42281A !important; padding: 8px;">51.3% Complex Geometry Scale</td>
+          <td style="color: #FFFFFF!important; padding: 8px;"><strong>mAP@50-95</strong></td>
+          <td style="color: #FFFFFF !important; padding: 8px;">Deep Positional Spatial Tracking</td>
+          <td style="color: #FFFFFF !important; padding: 8px;"><code style="color: #CD8151 !important; background: transparent !important;">0.513</code></td>
+          <td style="color: #FFFFFF !important; padding: 8px;">51.3% Complex Geometry Scale</td>
         </tr>
       </tbody>
     </table>
