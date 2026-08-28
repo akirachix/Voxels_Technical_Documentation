@@ -53,8 +53,6 @@ body {
   display: flex;
   gap: 28px;
   margin-top: 24px;
-  width: 100%;
-  max-width: 100%;
 }
 
 .md-content {
@@ -64,8 +62,6 @@ body {
   border: 1px solid #42281a;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
   animation: fadeInUp 0.4s cubic-bezier(0.25, 1, 0.5, 1) both;
-  width: 100%;
-  max-width: 100%;
 }
 
 .md-sidebar.md-sidebar--primary,

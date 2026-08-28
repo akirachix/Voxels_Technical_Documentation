@@ -1,13 +1,5 @@
 .api-page {
-  max-width: 100%;
   box-sizing: border-box;
-}
-
-.api-page *,
-.api-page *::before,
-.api-page *::after {
-  box-sizing: border-box;
-  max-width: 100%;
 }
 
 .api-hero {
@@ -104,7 +96,6 @@
   border-color: rgba(205, 129, 81, 0.6);
 }
 
-/* Section styling */
 .api-section {
   margin-top: 3em;
   animation: fadeInUp 0.6s cubic-bezier(0.25, 1, 0.5, 1) both;
@@ -134,18 +125,18 @@
 
 /* Section titles */
 .section-title {
-  color: #FFFFFF !important;
+  color: #ffffff !important;
   font-size: 2em !important;
   font-weight: 800 !important;
   margin-bottom: 0.8em !important;
   padding-bottom: 0.3em;
-  border-bottom: 3px solid #CD8151;
+  border-bottom: 3px solid #cd8151;
   display: inline-block;
 }
 
 /* Subsection titles */
 .subsection-title {
-  color: #FFFFFF !important;
+  color: #ffffff !important;
   font-size: 1.4em !important;
   font-weight: 700 !important;
   margin-top: 1.8em !important;
@@ -160,11 +151,10 @@
   display: inline-block;
   width: 4px;
   height: 1.2em;
-  background: #CD8151;
+  background: #cd8151;
   border-radius: 2px;
 }
 
-/* Endpoint rows */
 .endpoint-row {
   display: flex;
   align-items: center;
@@ -257,23 +247,23 @@
 }
 
 .styled-table thead {
-  background: #FFFFFF !important;
+  background: #ffffff !important;
 }
 
 .styled-table th {
-  color: #2D1A10 !important;
+  color: #2d1a10 !important;
   font-weight: 600 !important;
   padding: 0.8em 1em !important;
   text-align: left !important;
-  border-bottom: 2px solid #CD8151 !important;
-  background: #FFFFFF !important;
+  border-bottom: 2px solid #cd8151 !important;
+  background: #ffffff !important;
 }
 
 .styled-table td {
   padding: 0.7em 1em !important;
   border-bottom: 1px solid rgba(66, 40, 26, 0.06) !important;
-  color: #2D1A10 !important;
-  background: #FFFFFF !important;
+  color: #2d1a10 !important;
+  background: #ffffff !important;
   transition: all 0.3s ease !important;
 }
 
@@ -285,7 +275,6 @@
   background-color: rgba(205, 129, 81, 0.05) !important;
 }
 
-/* Status code grid */
 .status-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -364,22 +353,22 @@
 .api-page pre,
 .api-page code {
   border-radius: 10px !important;
-  border: 1px solid #E8E4E1 !important;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.06) !important;
+  border: 1px solid #e8e4e1 !important;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06) !important;
   transition: all 0.3s ease !important;
   position: relative;
-  color: #2D1A10 !important;
-  background-color: #F8F6F5 !important;
+  color: #2d1a10 !important;
+  background-color: #f8f6f5 !important;
 }
 
 .api-page pre:hover,
 .api-page code:hover {
-  box-shadow: 0 6px 24px rgba(0,0,0,0.1) !important;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.1) !important;
   transform: translateY(-1px);
 }
 
 .api-page pre code {
-  color: #2D1A10 !important;
+  color: #2d1a10 !important;
   background-color: transparent !important;
   display: block;
   padding: 1em !important;
@@ -388,20 +377,20 @@
 
 .api-section ul,
 .api-section ol {
-  color: #FFFFFF !important;
+  color: #ffffff !important;
 }
 
 .api-section li {
-  color: #FFFFFF !important;
+  color: #ffffff !important;
   line-height: 1.8;
 }
 
 .api-section a {
-  color: #CD8151 !important;
+  color: #cd8151 !important;
 }
 
 .api-section strong {
-  color: #FFFFFF !important;
+  color: #ffffff !important;
 }
 
 @keyframes heroFadeIn {
