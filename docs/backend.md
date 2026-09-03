@@ -1,531 +1,152 @@
-<div class="api-page">
-
-<div class="api-hero">
-  <h1>Backend</h1>
-  <p class="hero-subtitle">Mara Guard API - FastAPI backend for Voxels wildlife monitoring system.</p>
-  <div class="tech-badges">
-    <span class="tech-badge">FastAPI</span>
-    <span class="tech-badge">PostgreSQL</span>
-    <span class="tech-badge">SQLAlchemy 2.0</span>
-    <span class="tech-badge">JWT</span>
-    <span class="tech-badge">Redis</span>
-    <span class="tech-badge">Alembic</span>
-    <span class="tech-badge">Python 3.12</span>
-  </div>
-</div>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  if (typeof mermaid !== 'undefined') {
-    mermaid.initialize({
-      startOnLoad: true,
-      theme: 'dark',
-      themeVariables: {
-        primaryColor: '#2D1A10',
-        primaryTextColor: '#FFFFFF',
-        primaryBorderColor: '#CD8151',
-        lineColor: '#CD8151',
-        secondaryColor: '#3D2A1E',
-        tertiaryColor: '#1a0f0a',
-        background: '#1a0f0a',
-        mainBkg: '#2D1A10',
-        nodeBorder: '#CD8151',
-        clusterBkg: '#3D2A1E',
-        titleColor: '#FFFFFF',
-        edgeLabelBackground: '#2D1A10',
-        fontFamily: 'Poppins, Segoe UI, Arial, sans-serif',
-        relationshipLabelColor: '#CD8151',
-        relationshipLineColor: '#CD8151'
-      },
-      er: {
-        layoutDirection: 'LR',
-        minEntityWidth: 180,
-        minEntityHeight: 110,
-        entityPadding: 25,
-        fontSize: 15
-      },
-      flowchart: {
-        useMaxWidth: true,
-        htmlLabels: true,
-        curve: 'basis'
-      }
-    });
-  }
-});
-</script>
-<script type="module">
-  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
-  window.mermaid = mermaid;
-  mermaid.initialize({
-    startOnLoad: true,
-    theme: 'dark',
-    themeVariables: {
-      primaryColor: '#2D1A10',
-      primaryTextColor: '#FFFFFF',
-      primaryBorderColor: '#CD8151',
-      lineColor: '#CD8151',
-      secondaryColor: '#3D2A1E',
-      tertiaryColor: '#1a0f0a',
-      background: '#1a0f0a',
-      mainBkg: '#2D1A10',
-      nodeBorder: '#CD8151',
-      clusterBkg: '#3D2A1E',
-      titleColor: '#FFFFFF',
-      edgeLabelBackground: '#2D1A10',
-      fontFamily: 'Poppins, Segoe UI, Arial, sans-serif',
-      relationshipLabelColor: '#CD8151',
-      relationshipLineColor: '#CD8151'
-    },
-    er: {
-      layoutDirection: 'LR',
-      minEntityWidth: 180,
-      minEntityHeight: 110,
-      entityPadding: 25,
-      fontSize: 15
-    },
-    flowchart: {
-      useMaxWidth: true,
-      htmlLabels: true,
-      curve: 'basis'
-    }
-  });
-</script>
-</div>
-
-<div class="api-section">
-
-<div class="section-title">API Overview</div>
-
-<h3 class="subsection-title">Framework</h3>
-<p>FastAPI</p>
-
-<h3 class="subsection-title">Version</h3>
-<p>v1</p>
-
-<h3 class="subsection-title">Base Path</h3>
-<p>/</p>
-
-<h3 class="subsection-title">Authentication</h3>
-<p>JWT Bearer token in Authorization header</p>
-
-</div>
-
-<div class="api-section">
-
-<div class="section-title">Hosted API</div>
-
-<h3 class="subsection-title">Production URL</h3>
-<p><a href="https://maraguard-3686f239afe8.herokuapp.com/docs" target="_blank">https://maraguard-3686f239afe8.herokuapp.com</a></p>
-
-<h3 class="subsection-title">Documentation</h3>
-
-<ul>
-  <li><a href="https://maraguard-3686f239afe8.herokuapp.com/docs" target="_blank">Swagger UI</a></li>
-  <li><a href="https://maraguard-3686f239afe8.herokuapp.com/redoc" target="_blank">ReDoc</a></li>
-</ul>
-
-</div>
-
-<div class="api-section">
-
-<div class="section-title">Prerequisites</div>
-
-<h3 class="subsection-title">Requirements</h3>
-<p>Python 3.12+, PostgreSQL, Redis (optional).</p>
-
-</div>
-
-<div class="api-section">
-
-<div class="section-title">Setup and Installation</div>
-
-<h3 class="subsection-title">Step 1</h3>
-<p>Clone repo and cd into project</p>
-
-<h3 class="subsection-title">Step 2</h3>
-<p>python -m venv env && source env/bin/activate</p>
-
-<h3 class="subsection-title">Step 3</h3>
-<p>pip install -r requirements.txt</p>
-
-<h3 class="subsection-title">Step 4</h3>
-<p>Create .env with DATABASE_URL, SECRET_KEY, REDIS_URL, MAIL_*</p>
-
-<h3 class="subsection-title">Step 5</h3>
-<p>alembic upgrade head</p>
-
-<h3 class="subsection-title">Step 6</h3>
-<p>python main.py</p>
-
-</div>
-
-<div class="api-section">
-
-<div class="section-title">Architecture Layers</div>
-
-<h3 class="subsection-title">Router</h3>
-<p>API routes and endpoint definitions</p>
-
-<h3 class="subsection-title">Schema</h3>
-<p>Pydantic request/response validation</p>
-
-<h3 class="subsection-title">Service</h3>
-<p>Business logic and orchestration</p>
-
-<h3 class="subsection-title">Repository</h3>
-<p>Database access and queries</p>
-
-</div>
-
-<div class="api-section">
-
-<div class="section-title">API Conventions</div>
-
-<h3 class="subsection-title">Base URL</h3>
-<p>https://maraguard-3686f239afe8.herokuapp.com</p>
-
-<h3 class="subsection-title">Status Codes</h3>
-
-<div class="status-grid">
-  <div class="status-item">
-    <span class="status-code">200 OK</span>
-    <span class="status-desc">Request succeeded</span>
-  </div>
-  <div class="status-item">
-    <span class="status-code">201 Created</span>
-    <span class="status-desc">Resource created successfully</span>
-  </div>
-  <div class="status-item">
-    <span class="status-code">400 Bad Request</span>
-    <span class="status-desc">Invalid input data</span>
-  </div>
-  <div class="status-item">
-    <span class="status-code">401 Unauthorized</span>
-    <span class="status-desc">Missing or invalid JWT token</span>
-  </div>
-  <div class="status-item">
-    <span class="status-code">404 Not Found</span>
-    <span class="status-desc">Resource not found</span>
-  </div>
-  <div class="status-item">
-    <span class="status-code">429 Too Many Requests</span>
-    <span class="status-desc">Rate limit exceeded</span>
-  </div>
-  <div class="status-item">
-    <span class="status-code">500 Internal Server Error</span>
-    <span class="status-desc">Unexpected backend error</span>
-  </div>
-</div>
-
-</div>
-
-<div class="api-section">
-
-<div class="section-title">Endpoint Categories</div>
-
-<h3 class="subsection-title">Authentication & User Management</h3>
-
-<div class="endpoint-row">
-  <span class="method method-post">POST</span>
-  <span class="path">/rangers/register</span>
-  <span class="desc">Register a new ranger</span>
-</div>
-
-<div class="endpoint-row">
-  <span class="method method-post">POST</span>
-  <span class="path">/rangers/login</span>
-  <span class="desc">Login, returns JWT token</span>
-</div>
-
-<div class="endpoint-row">
-  <span class="method method-get">GET</span>
-  <span class="path">/rangers/me</span>
-  <span class="desc">Get current ranger profile</span>
-</div>
-
-<div class="endpoint-row">
-  <span class="method method-get">GET</span>
-  <span class="path">/rangers/</span>
-  <span class="desc">List all rangers (admin)</span>
-</div>
-
-<h3 class="subsection-title">Password Management</h3>
-
-<div class="endpoint-row">
-  <span class="method method-post">POST</span>
-  <span class="path">/rangers/forgot-password</span>
-  <span class="desc">Initiate password reset</span>
-</div>
-
-<div class="endpoint-row">
-  <span class="method method-post">POST</span>
-  <span class="path">/rangers/verify-reset-code</span>
-  <span class="desc">Verify reset code</span>
-</div>
-
-<div class="endpoint-row">
-  <span class="method method-post">POST</span>
-  <span class="path">/rangers/reset-password</span>
-  <span class="desc">Reset password</span>
-</div>
-
-<h3 class="subsection-title">Detection Management</h3>
-
-<div class="endpoint-row">
-  <span class="method method-post">POST</span>
-  <span class="path">/detection</span>
-  <span class="desc">Log a new lion detection</span>
-</div>
-
-<div class="endpoint-row">
-  <span class="method method-get">GET</span>
-  <span class="path">/detection</span>
-  <span class="desc">List detections (filter by date)</span>
-</div>
-
-<h3 class="subsection-title">Telemetry Management</h3>
-
-<div class="endpoint-row">
-  <span class="method method-post">POST</span>
-  <span class="path">/telemetry/</span>
-  <span class="desc">Create a new telemetry log</span>
-</div>
-
-<div class="endpoint-row">
-  <span class="method method-get">GET</span>
-  <span class="path">/telemetry/</span>
-  <span class="desc">Read all telemetry logs</span>
-</div>
-
-<div class="endpoint-row">
-  <span class="method method-patch">PATCH</span>
-  <span class="path">/telemetry/{log_id}</span>
-  <span class="desc">Update a telemetry log</span>
-</div>
-
-<div class="endpoint-row">
-  <span class="method method-delete">DELETE</span>
-  <span class="path">/telemetry/{log_id}</span>
-  <span class="desc">Delete a telemetry log</span>
-</div>
-
-</div>
-
-<div class="api-section">
-
-<div class="section-title">Data Models</div>
-
-<h3 class="subsection-title">Database Schema</h3>
-
-<p>PostgreSQL database with SQLAlchemy 2.0 ORM and Alembic migrations.</p>
-
-<div class="erd-wrapper">
-<div class="erd-glow"></div>
-<div class="erd-container">
-
-```mermaid
-erDiagram
-    RANGERS ||--o{ TELEMETRY_LOGS : "has"
-    TELEMETRY_LOGS ||--o{ DETECTIONS : "contains"
-
-    RANGERS {
-        int ranger_id PK
-        string first_name
-        string last_name
-        string email
-        string password_hash
-    }
-
-    TELEMETRY_LOGS {
-        string log_id PK
-        string ranger_id FK
-        datetime datetime
-        decimal battery_level
-    }
-
-    DETECTIONS {
-        string detection_id PK
-        string log_id FK
-        datetime time_captured
-        decimal confidence_score
-        int lion_count
-    }
+# Backend
+
+> The Mara Guard backend is a production FastAPI service — typed, secured, and auto-documented. It powers ranger accounts, real-time lion detections, and field-node telemetry, exposed through a clean REST surface.
+
+**Live API:** [Swagger UI](https://maraguard-3686f239afe8.herokuapp.com/docs) · [ReDoc](https://maraguard-3686f239afe8.herokuapp.com/redoc) · [OpenAPI Spec](https://maraguard-3686f239afe8.herokuapp.com/openapi.json)
+
+---
+
+## 1. Overview
+
+- **Framework** — FastAPI on Python 3.12, with async I/O and auto-generated OpenAPI 3.0 docs.
+- **Title / Version** — `Mara Guard` · `0.1.0`.
+- **Auth** — JWT (HS256) delivered via HTTPOnly `access_token` cookie or `Authorization: Bearer …` header.
+- **CORS** — Allowlist-driven via the `ALLOWED_ORIGINS` environment variable.
+- **Validation** — Pydantic v2 schemas with humanized 422 error messages.
+- **Database** — PostgreSQL + SQLAlchemy 2.0 + Alembic.
+- **Cache** — Redis (with graceful in-memory fallback).
+
+## 2. Project Structure
+
+```text
+Voxels_Backend/
+├── main.py                 # FastAPI app, middleware, exception handlers
+├── database.py             # Engine, SessionLocal, Redis client
+├── requirements.txt
+├── alembic.ini
+├── alembic/versions/       # Initial migration
+└── maraguardAPI/
+    ├── core/              # config.py, dependencies.py (get_current_ranger)
+    ├── models/            # SQLAlchemy ORM models
+    ├── schemas/           # Pydantic request/response models
+    ├── routers/           # API routes (ranger, detection, telemetry_logs)
+    ├── repositories/      # Data-access layer
+    └── services/          # Business logic and orchestration
 ```
 
-</div>
-</div>
+The request flow is **Router → Schema → Service → Repository → DB**, with Redis used for short-lived reset codes and SMTP used to deliver them.
 
-<h3 class="subsection-title">Ranger</h3>
+## 3. Setup & Installation
 
-<div class="styled-table-wrapper">
-<table class="styled-table">
-  <thead>
-    <tr>
-      <th>Field</th>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>ranger_id</td>
-      <td>Integer</td>
-      <td>Primary key</td>
-    </tr>
-    <tr>
-      <td>first_name</td>
-      <td>String(100)</td>
-      <td>Ranger's first name</td>
-    </tr>
-    <tr>
-      <td>last_name</td>
-      <td>String(100)</td>
-      <td>Ranger's last name</td>
-    </tr>
-    <tr>
-      <td>email</td>
-      <td>String(100)</td>
-      <td>Unique email address</td>
-    </tr>
-    <tr>
-      <td>password_hash</td>
-      <td>String(255)</td>
-      <td>Bcrypt hashed password</td>
-    </tr>
-  </tbody>
-</table>
-</div>
+```bash
+git clone https://github.com/akirachix/Voxels_Backend.git
+cd Voxels_Backend
+python -m venv env && source env/bin/activate
+pip install -r requirements.txt
+cp .env.example .env       # fill in DATABASE_URL, SECRET_KEY, MAIL_*
+alembic upgrade head
+python main.py             # or: uvicorn main:app --reload
+```
 
-<h3 class="subsection-title">Detection</h3>
+The API runs on `http://localhost:8000`. Interactive docs are at `/docs` and `/redoc`.
 
-<div class="styled-table-wrapper">
-<table class="styled-table">
-  <thead>
-    <tr>
-      <th>Field</th>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>detection_id</td>
-      <td>String(36)</td>
-      <td>UUID primary key</td>
-    </tr>
-    <tr>
-      <td>log_id</td>
-      <td>String(36)</td>
-      <td>Associated telemetry log</td>
-    </tr>
-    <tr>
-      <td>time_captured</td>
-      <td>DateTime</td>
-      <td>Timestamp of detection</td>
-    </tr>
-    <tr>
-      <td>confidence_score</td>
-      <td>Numeric(3,2)</td>
-      <td>AI confidence (0.00 - 1.00)</td>
-    </tr>
-    <tr>
-      <td>lion_count</td>
-      <td>Integer</td>
-      <td>Number of lions detected</td>
-    </tr>
-  </tbody>
-</table>
-</div>
+## 4. Environment Variables
 
-<h3 class="subsection-title">Telemetry Log</h3>
+| Variable | Description | Default |
+| --- | --- | --- |
+| `DATABASE_URL` | PostgreSQL connection string | `postgresql://postgres:postgres@localhost:5432/maraguard_db` |
+| `SECRET_KEY` | JWT signing secret | _required_ |
+| `ALGORITHM` | JWT algorithm | `HS256` |
+| `ACCESS_TOKEN_EXPIRE_MINUTES` | Token lifetime | `30` |
+| `REDIS_URL` | Redis connection string | `redis://localhost:6379` |
+| `MAIL_USERNAME` | SMTP username (password reset) | _required_ |
+| `MAIL_PASSWORD` | SMTP password / app password | _required_ |
+| `MAIL_FROM` | Sender address | _required_ |
+| `MAIL_PORT` | SMTP port | `587` |
+| `MAIL_SERVER` | SMTP host | `smtp.gmail.com` |
+| `ALLOWED_ORIGINS` | Comma-separated CORS allowlist | `http://localhost:3000,http://192.168.100.95:3000` |
 
-<div class="styled-table-wrapper">
-<table class="styled-table">
-  <thead>
-    <tr>
-      <th>Field</th>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>log_id</td>
-      <td>String(36)</td>
-      <td>UUID primary key</td>
-    </tr>
-    <tr>
-      <td>ranger_id</td>
-      <td>String(36)</td>
-      <td>Ranger who created the log</td>
-    </tr>
-    <tr>
-      <td>datetime</td>
-      <td>DateTime</td>
-      <td>Log timestamp</td>
-    </tr>
-    <tr>
-      <td>battery_level</td>
-      <td>Numeric(10,2)</td>
-      <td>Battery percentage (0 - 100)</td>
-    </tr>
-  </tbody>
-</table>
-</div>
+## 5. Authentication & User Management — `/rangers`
 
-</div>
+- **`POST /rangers/register`** — Register a new ranger. Returns `201` with a `RangerResponse`.
+- **`POST /rangers/login`** — Login. Returns a JWT and sets the `access_token` HTTPOnly cookie.
+- **`GET /rangers/me`** — Current ranger profile (auth required).
+- **`GET /rangers/`** — List all rangers (auth required).
+- **`POST /rangers/forgot-password`** — Send a 6-digit reset code via SMTP.
+- **`POST /rangers/verify-reset-code`** — Verify the 6-digit code.
+- **`POST /rangers/reset-password`** — Reset the password with code + new password.
 
-<div class="api-section>
+## 6. Detection Management — `/detection` (auth required)
 
-<div class="section-title">Testing and QA</div>
+- **`POST /detection`** — Log a new lion detection event.
+- **`GET /detection?date_captured=YYYY-MM-DD`** — List detections, optional date filter.
 
-<h3 class="subsection-title">Framework</h3>
-<p>Playwright for end-to-end testing.</p>
+## 7. Telemetry Management — `/telemetry` (auth required)
 
-<h3 class="subsection-title">Run Tests</h3>
+- **`POST /telemetry/`** — Create a telemetry log. Returns `201` with `TelemetryLogResponse`.
+- **`GET /telemetry/`** — List all telemetry logs.
+- **`PATCH /telemetry/{log_id}`** — Update a telemetry log (e.g. battery level).
+- **`DELETE /telemetry/{log_id}`** — Delete a telemetry log.
+
+## 8. Data Models
+
+### 8.1 `rangers`
+| Field | Type | Constraint |
+| --- | --- | --- |
+| `ranger_id` | Integer | PK, autoincrement, indexed |
+| `first_name` | String(100) | NOT NULL |
+| `last_name` | String(100) | NOT NULL |
+| `email` | String(100) | NOT NULL, UNIQUE |
+| `password_hash` | String(255) | NOT NULL (bcrypt) |
+
+### 8.2 `detections`
+| Field | Type | Constraint |
+| --- | --- | --- |
+| `detection_id` | String(36) | PK (UUID) |
+| `log_id` | String(36) | NOT NULL |
+| `time_captured` | DateTime | NOT NULL |
+| `confidence_score` | Numeric(3,2) | `0.00 – 1.00` (CHECK) |
+| `lion_count` | Numeric(5,0) | `≥ 0`, default `0` (CHECK) |
+
+### 8.3 `Telemetry_logs`
+| Field | Type | Constraint |
+| --- | --- | --- |
+| `log_id` | String(36) | PK (UUID), indexed, auto-generated |
+| `ranger_id` | String(36) | NOT NULL |
+| `datetime` | DateTime | NOT NULL, default `utcnow()` |
+| `battery_level` | Numeric(10,2) | `0 – 100` (CHECK) |
+
+## 9. Cross-Cutting Concerns
+
+- **CORS** — Origins are read from `ALLOWED_ORIGINS`. Credentials enabled; methods `GET, POST, PUT, PATCH, DELETE, OPTIONS`; headers `Content-Type`, `Authorization`.
+- **Auth** — `get_current_ranger` reads the JWT from cookie first, then header. Tokens are HS256-signed; `sub` carries the ranger id.
+- **Validation** — Custom handlers turn Pydantic errors into humanized `detail` strings (e.g. *"Email: Please enter a valid email address."*).
+- **Database** — Engine uses `pool_pre_ping=True` for dead-session recovery. Schema is Alembic-managed.
+- **Redis (optional)** — If the connection fails on startup, the app logs the error and continues with `redis_client = None`.
+
+## 10. Testing
+
+End-to-end tests run with Playwright:
 
 ```bash
 playwright test
 ```
 
-</div>
+## 11. Code Standards
 
-<div class="api-section">
+- **Naming** — `snake_case` for variables, functions, and files; `PascalCase` for classes and models.
+- **Structure** — Routers, schemas, services, and repositories each in their own file.
+- **Commits** — Conventional Commits (`feat:`, `fix:`, `docs:`, …).
 
-<div class="section-title">Code Standards</div>
+## 12. Deployment
 
-<h3 class="subsection-title">Naming</h3>
-<p>snake_case for variables/functions/files, PascalCase for classes/models.</p>
+- **Platform** — Heroku (staging & production).
+- **Branch** — Auto-deploys from `main` via GitHub Actions (`.github/workflows/deploy.yml`).
+- **Runtime** — `Procfile` runs `uvicorn main:app --host 0.0.0.0 --port $PORT`.
+- **Migrations** — CI step `heroku run alembic upgrade head` after deploy.
+- **Scaling** — Automatic via Heroku dynos.
+- **Rollback** — Re-deploy a previous release from the Heroku dashboard.
 
-<h3 class="subsection-title">Structure</h3>
-<p>routers, schemas, services, repositories in separate files.</p>
+---
 
-<h3 class="subsection-title">Commits</h3>
-<p>conventional commits (feat, fix, docs, etc.)</p>
-
-</div>
-
-<div class="api-section">
-
-<div class="section-title">Deployment</div>
-
-<h3 class="subsection-title">Platform</h3>
-<p>Heroku (Staging & Production)</p>
-
-<h3 class="subsection-title">Branch</h3>
-<p>Deploy from main</p>
-
-<h3 class="subsection-title">Environment Variables</h3>
-<p>Managed in Heroku dashboard.</p>
-
-<h3 class="subsection-title">Scaling</h3>
-<p>Auto-scaling via Heroku dynos.</p>
-
-<h3 class="subsection-title">Rollback</h3>
-<p>Rollback to previous release via Heroku dashboard.</p>
-
-</div>
-
-</div>
-
-</div>
+> For the security model and threat-mitigation approach, see the [Security page](security.md).
