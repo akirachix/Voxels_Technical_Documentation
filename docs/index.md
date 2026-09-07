@@ -12,7 +12,7 @@
     <h2>Incident Alerts. Telemetry. Analytics.</h2>
     <p>Empowering field rangers and Maasai pastoralists with proactive regional tracking tools.</p>
   </div>
-
+                                                                                                                          
   <div class="carousel-slide">
     <img src="images/test.png" alt="Embedded YOLOv8 Verification" class="platform-img">
     <h2>On-Board Neural Network Verification</h2>
