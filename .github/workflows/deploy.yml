@@ -2,8 +2,7 @@ name: Publish Docs via GitHub Actions
 on:
   push:
     branches:
-      - main  
-  workflow_dispatch:
+      - main  # Runs every time code is merged into the main branch
 
 permissions:
   contents: write
