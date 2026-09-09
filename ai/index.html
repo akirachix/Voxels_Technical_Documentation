@@ -1,0 +1,1075 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../hardware-prototype/">
+      
+      
+        <link rel="next" href="../qa-process/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../images/icon-logo.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>AI - Voxels Technical Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,700,700i%7CFira+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Poppins";--md-code-font:"Fira Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../styles/extra.css">
+    
+      <link rel="stylesheet" href="../styles/api-reference.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="brown" data-md-color-accent="amber">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#mara-guard-ai-intelligence-layer-technical-specifications" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Voxels Technical Documentation" class="md-header__button md-logo" aria-label="Voxels Technical Documentation" data-md-component="logo">
+      
+  <img src="../images/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Voxels Technical Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              AI
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="brown" data-md-color-accent="amber"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Voxels Technical Documentation" class="md-nav__button md-logo" aria-label="Voxels Technical Documentation" data-md-component="logo">
+      
+  <img src="../images/logo.png" alt="logo">
+
+    </a>
+    Voxels Technical Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../how-it-works/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How It Works
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../features/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Features
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mobile-development/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Frontend Mobile
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dashboard-web/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Frontend Web
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backend/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Backend
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hardware-prototype/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IoT Hardware Prototype
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#section-1-development-sandbox-environment-baseline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Section 1: Development Sandbox &amp; Environment Baseline
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Section 1: Development Sandbox &amp; Environment Baseline">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#engineering-team" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Engineering Team
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-2-data-engineering-pipeline-sanitization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Section 2: Data Engineering &amp; Pipeline Sanitization
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Section 2: Data Engineering &amp; Pipeline Sanitization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ingestion-source" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ingestion Source
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pixel-level-augmentation-configurations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pixel-Level Augmentation Configurations
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-3-architecture-scale-network-profile" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Section 3: Architecture Scale &amp; Network Profile
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Section 3: Architecture Scale &amp; Network Profile">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#structural-complexity-specs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Structural Complexity Specs
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-4-training-execution-loop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Section 4: Training Execution Loop
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Section 4: Training Execution Loop">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#optimization-hyperparameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Optimization Hyperparameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-5-compilation-overrides-edge-adaptation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Section 5: Compilation Overrides &amp; Edge Adaptation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-6-empirical-metrics-validation-logs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Section 6: Empirical Metrics &amp; Validation Logs
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../qa-process/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Q/A Process
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Security Implemented
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deployment-process/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deployment Process
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../code-standards/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Code Standards
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../brand-guideline/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Brand Guideline
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="mara-guard-ai-intelligence-layer-technical-specifications">Mara Guard AI Intelligence Layer: Technical Specifications</h1>
+<p>The core intelligence layer of Mara Guard relies on a custom-trained, edge-optimized <strong>Ultralytics YOLOv8 (You Only Look Once)</strong> computer vision model. This architecture handles real-time single-pass object detection, multi-object tracking, and automated threat density count categorization directly on field hardware.</p>
+<hr />
+<h2 id="section-1-development-sandbox-environment-baseline">Section 1: Development Sandbox &amp; Environment Baseline</h2>
+<h3 id="engineering-team">Engineering Team</h3>
+<ul>
+<li><strong>Rose Wanjiru Muragu</strong></li>
+<li><strong>Ineza Lira Gabriella</strong></li>
+<li><strong>Esther Kazungu</strong></li>
+<li><strong>Prudence Ndolo</strong></li>
+</ul>
+<div class="custom-card-container">
+  <div class="custom-card" style="background-color: #FFFFFF !important; border: 1px solid #CD8151 !important;">
+    <h3 style="color: #2D1A10 !important;">Shared Storage Mounting Protocol</h3>
+    <p style="color: #42281A !important;">To persist neural weights beyond temporary container lifecycles, the team established a secure runtime mount to shared network storage pools:</p>
+    <pre style="background-color: #FFFFFF !important; border: 1px solid #D4C5BD !important; padding: 12px; border-radius: 8px;"><code class="language-python" style="color: #42281A !important; background: transparent !important;">from google.colab import drive
+drive.mount('/content/drive')</code></pre>
+  </div>
+  <div class="custom-card" style="background-color: #FFFFFF !important; border: 1px solid #CD8151 !important;">
+    <h3 style="color: #2D1A10 !important;">System Verification Signature</h3>
+    <p style="color: #42281A !important;">Deterministic baseline testing confirms the underlying tooling allocations before parameter compilation starts:</p>
+    <pre style="background-color: #FFFFFF !important; border: 1px solid #D4C5BD !important; padding: 12px; border-radius: 8px;"><code class="language-text" style="color: #42281A !important; background: transparent !important;">Ultralytics 8.4.127  Python-3.13.15 torch-2.11.0+cu120 CUDA:0 (Tesla T4, 14913MiB)
+Setup complete  (12 CPUs, 12.7 GB RAM, 47.2/112.6 GB disk)</code></pre>
+  </div>
+</div>
+
+<hr />
+<h2 id="section-2-data-engineering-pipeline-sanitization">Section 2: Data Engineering &amp; Pipeline Sanitization</h2>
+<h3 id="ingestion-source">Ingestion Source</h3>
+<p>The annotated computer vision corpus was pulled directly from our group's cloud repository workspace using the Roboflow native platform wrapper API.</p>
+<div class="custom-card-container">
+  <div class="custom-card" style="background-color: #FFFFFF !important; border: 1px solid #CD8151 !important;">
+    <h3 style="color: #2D1A10 !important;">Dataset Ingestion Profile</h3>
+    <p style="color: #42281A !important;">Executes structural platform authentication and target archive assembly pull requests:</p>
+    <pre style="background-color: #FFFFFF !important; border: 1px solid #D4C5BD !important; padding: 12px; border-radius: 8px;"><code class="language-python" style="color: #42281A !important; background: transparent !important;">from roboflow import Roboflow
+rf = Roboflow(api_key="HjIvvD9co08AYBKA6SUd")
+project = rf.workspace("muragu-wanjiru").project("lion-a0vv0-s4mdt")
+version = project.version(1)
+dataset = version.download("yolov8")</code></pre>
+  </div>
+  <div class="custom-card" style="background-color: #FFFFFF !important; border: 1px solid #CD8151 !important;">
+    <h3 style="color: #2D1A10 !important;">Processing Pipeline Rules</h3>
+    <p style="color: #42281A !important;">Core optimization and cleanup triggers executed on data sequence streams:</p>
+    <pre style="background-color: #FFFFFF !important; border: 1px solid #D4C5BD !important; padding: 12px; border-radius: 8px;"><code class="language-text" style="color: #42281A !important; background: transparent !important;">[Local Lookup Generation] -> Created lookup mapping: /content/Lion-1/valid/labels.cache
+           |
+[Token De-duplication]   -> Sanitized sequence logs: 1 duplicate labels removed
+           |
+[Geometric Alignment]    -> Corrected imbalance: dropping segments to match bounding assets</code></pre>
+  </div>
+  <div class="custom-card" style="background-color: #FFFFFF !important; border: 1px solid #CD8151 !important;">
+    <h3 style="color: #2D1A10 !important;">Geometry Rectification Warning</h3>
+    <p style="color: #42281A !important;">The framework overrides segmentation polygon imbalances to preserve node calculation speeds:</p>
+    <pre style="background-color: #FFFFFF !important; border: 1px solid #D4C5BD !important; padding: 12px; border-radius: 8px;"><code class="language-text" style="color: #42281A !important; background: transparent !important;">WARNING  A box and segment counts should be equal, but got len(segments) = 342, len(boxes) = 446.</code></pre>
+    <p style="color: #42281A !important;"><em>Action:</em> Prioritizes rectangular 2D object-bounding detection boxes (<code style="color: #CD8151 !important; background: transparent !important;">len(boxes) = 446</code>).</p>
+  </div>
+</div>
+
+<h3 id="pixel-level-augmentation-configurations">Pixel-Level Augmentation Configurations</h3>
+<p>To track focal points under pitch-black midnight wilderness constraints, the data pipeline runs custom Albumentations:
+Blur(p=0.01, blur_limit=(3, 7)) MedianBlur: Replicates physical impact movement tracking artifacts on a fence node.
+CAHE(p=0.01, clip_limit=(1.0, 4.0)): Normalizes dynamic contrast fields across volatile wilderness shadows.</p>
+<hr />
+<h2 id="section-3-architecture-scale-network-profile">Section 3: Architecture Scale &amp; Network Profile</h2>
+<p>The standard multi-class target baseline was stripped down to optimize channel throughput:</p>
+<p>Overriding model.yaml nc=80 with nc=1</p>
+<p>By compressing standard classification matrices from 80 generic classes to exactly 1 target class (class: lion), the network minimizes runtime overhead.</p>
+<h3 id="structural-complexity-specs">Structural Complexity Specs</h3>
+<p><strong>Structural Topology Layers:</strong> 130
+ <strong>Parametric Footprint Scale:</strong> 3,011,043 parameters
+ <strong>Active Gradient Tracking Channels:</strong> 3,011,027 elements
+ <strong>Matrix Computation Bandwidth:</strong> 8.2 GFLOPs</p>
+<hr />
+<h2 id="section-4-training-execution-loop">Section 4: Training Execution Loop</h2>
+<div class="custom-card-container">
+  <div class="custom-card" style="background-color: #FFFFFF !important; border: 1px solid #CD8151 !important;">
+    <h3 style="color: #2D1A10 !important;">CLI Training Invocation</h3>
+    <p style="color: #42281A !important;">Terminal processing loop assigning hardware metrics and targeting specific ecosystem parameter files:</p>
+    <pre style="background-color: #FFFFFF !important; border: 1px solid #D4C5BD !important; padding: 12px; border-radius: 8px;"><code class="language-bash" style="color: #42281A !important; background: transparent !important;">!yolo detect train model=yolov8n.pt data=/content/Lion-1/data.yaml epochs=5 imgsz=640 device=0</code></pre>
+  </div>
+  <div class="custom-card" style="background-color: #FFFFFF !important; border: 1px solid #CD8151 !important;">
+    <h3 style="color: #2D1A10 !important;">Epoch Optimization History Log</h3>
+    <p style="color: #42281A !important;">Parameter stabilization track mapping classification and object loss ceilings over time:</p>
+    <pre style="background-color: #FFFFFF !important; border: 1px solid #D4C5BD !important; padding: 12px; border-radius: 8px;"><code class="language-text" style="color: #42281A !important; background: transparent !important;">Epoch 1/5 -> [Cls Loss Score: 0.3042] -> [Track Count: 1 Instance Checked]
+Epoch 2/5 -> [Cls Loss Score: 0.6670] -> [Track Count: 8.3980 Instances]
+Epoch 3/5 -> [Cls Loss Score: 0.6100] -> [Track Count: 8.0180 Instances]
+Epoch 4/5 -> [Cls Loss Score: 0.7550] -> [Track Count: 8.6080 Instances]
+Epoch 5/5 -> [Cls Loss Score: 0.8840] -> [Track Count: 8.7750 Instances]</code></pre>
+    <p style="color: #42281A !important;"><em>Duration Metric:</em> 5 epochs completed in 0.012 hours (43.2 seconds).</p>
+  </div>
+</div>
+
+<h3 id="optimization-hyperparameters">Optimization Hyperparameters</h3>
+<p>model=yolov8n.pt: Selected Nano topology variant to minimize latency constraints on field edge hardware.
+ imgsz=640: Constrains inputs to symmetric 640x640 pixel grids to guarantee continuous real-time execution frames.
+ Optimizer=AdamW: Bound to a base learning floor of lr0=0.002 with a momentum constraint ceiling of 0.9.</p>
+<hr />
+<h2 id="section-5-compilation-overrides-edge-adaptation">Section 5: Compilation Overrides &amp; Edge Adaptation</h2>
+<div class="custom-card-container">
+  <div class="custom-card" style="background-color: #FFFFFF !important; border: 1px solid #CD8151 !important;">
+    <h3 style="color: #2D1A10 !important;">Edge Strip Pass Response</h3>
+    <p style="color: #42281A !important;">Post-training automation routine stripping extra logging structures to save RAM storage channels:</p>
+    <pre style="background-color: #FFFFFF !important; border: 1px solid #D4C5BD !important; padding: 12px; border-radius: 8px;"><code class="language-text" style="color: #42281A !important; background: transparent !important;">Optimizer stripped from /content/runs/detect/train/weights/best.pt, 6.2MB</code></pre>
+  </div>
+  <div class="custom-card" style="background-color: #FFFFFF !important; border: 1px solid #CD8151 !important;">
+    <h3 style="color: #2D1A10 !important;">Footprint Minimization</h3>
+    <p style="color: #42281A !important;">Gradient tracking calculations are fully stripped, dropping total deployment scale to <strong>exactly 6.2 Megabytes</strong> for execution inside Raspberry Pi 5 edge nodes.</p>
+  </div>
+  <div class="custom-card" style="background-color: #FFFFFF !important; border: 1px solid #CD8151 !important;">
+    <h3 style="color: #2D1A10 !important;">Automatic Mixed Precision</h3>
+    <p style="color: #42281A !important;">By compiling with <code style="color: #CD8151 !important; background: transparent !important;">AMP=True</code>, arithmetic loops fold into FP16 and FP32 clusters, doubling hardware processing throughput rules without dropping precision bounds.</p>
+  </div>
+</div>
+
+<hr />
+<p>### Environment Context
+ <strong>Interactive Notebook:</strong> <a href="https://colab.research.google.com/drive/149ljCCZKRykwVr4Lam5p_pIYwD-ci-Ef#scrollTo=rqwiwdzw9l2b">Google Colab Workspace</a></p>
+<h2 id="section-6-empirical-metrics-validation-logs">Section 6: Empirical Metrics &amp; Validation Logs</h2>
+<div class="custom-card-container">
+  <div class="custom-card" style="background-color: #FFFFFF !important; border: 1px solid #CD8151 !important;">
+    <h3 style="color: #2D1A10 !important;">Inference Pipeline Initialization</h3>
+    <p style="color: #42281A !important;">Invokes verified analytical passes across raw threat directory boundaries:</p>
+    <pre style="background-color: #FFFFFF !important; border: 1px solid #D4C5BD !important; padding: 12px; border-radius: 8px;"><code class="language-python" style="color: #42281A !important; background: transparent !important;">model = YOLO('runs/detect/train/weights/best.pt')
+results = model.predict(source='/content/Lion-1/valid/images', save=True, conf=0.25)</code></pre>
+  </div>
+  <div class="custom-card" style="background-color: #FFFFFF !important; border: 1px solid #CD8151 !important;">
+    <h3 style="color: #2D1A10 !important;">Batch Evaluation History Ledger</h3>
+    <p style="color: #42281A !important;">Raw runtime tracking extracts mapping geographic image sizes to threat count latency counts:</p>
+    <pre style="background-color: #FFFFFF !important; border: 1px solid #D4C5BD !important; padding: 12px; border-radius: 8px;"><code class="language-text" style="color: #42281A !important; background: transparent !important;">[image 01/81] 480 x 640 px   2 Lions Verified     6.1 ms Latency
+[image 14/81] 384 x 640 px   3 Lions Verified     6.9 ms Latency
+[image 17/81] 384 x 640 px   6 Lions Verified     6.0 ms Latency
+[image 51/81] 640 x 640 px   2 Lions Verified     9.1 ms Latency
+[image 58/81] 640 x 640 px   2 Lions Verified     8.0 ms Latency
+[image 73/81] 640 x 640 px   2 Lions Verified     7.4 ms Latency
+[image 81/81] 640 x 640 px   2 Lions Verified     9.6 ms Latency</code></pre>
+  </div>
+</div>
+
+<div class="custom-card-container">
+  <div class="custom-card" style="flex: 1 1 100% !important; background-color: #FFFFFF !important; border: 1px solid #CD8151 !important;">
+    <h3 style="color: #2D1A10 !important;">Validation Dataset Benchmarks</h3>
+    <p style="color: #42281A !important;">Evaluation passes executed against 81 reference validation images mapping 102 threat instances yielded the following structural accuracy rates:</p>
+    <table style="width: 100%; border-collapse: collapse; margin-top: 12px;">
+      <thead>
+        <tr style="border-bottom: 2px solid #FFFFFF; text-align: left;">
+          <th style="color:#FFFFFF !important; padding: 8px;">Tracking Parameter</th>
+          <th style="color: #FFFFFF !important; padding: 8px;">Technical Metric Name</th>
+          <th style="color: #FFFFFF!important; padding: 8px;">Realized Operational Score</th>
+          <th style="color: #FFFFFF !important; padding: 8px;">Performance Output</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="border-bottom: 1px solid #D4C5BD;">
+          <td style="color: #FFFFFF !important; padding: 8px;"><strong>P</strong></td>
+          <td style="color: #FFFFFF !important; padding: 8px;">Box Precision Metric</td>
+          <td style="color: #FFFFFF !important; padding: 8px;"><code style="color: #CD8151 !important; background: transparent !important;">0.865</code></td>
+          <td style="color:#FFFFFF !important; padding: 8px;">86.5% Accuracy</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #D4C5BD;">
+          <td style="color: #FFFFFF !important; padding: 8px;"><strong>R</strong></td>
+          <td style="color: #FFFFFF !important; padding: 8px;">Recall Performance Value</td>
+          <td style="color: #FFFFFF !important; padding: 8px;"><code style="color: #CD8151 !important; background: transparent !important;">0.775</code></td>
+          <td style="color: #FFFFFF !important; padding: 8px;">77.5% True Positive Catch Rate</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #D4C5BD;">
+          <td style="color: #FFFFFF !important; padding: 8px;"><strong>mAP@50</strong></td>
+          <td style="color:#FFFFFF !important; padding: 8px;">Mean Average Precision Threshold</td>
+          <td style="color: #FFFFFF !important; padding: 8px;"><code style="color: #CD8151 !important; background: transparent !important;">0.884</code></td>
+          <td style="color: #FFFFFF !important; padding: 8px;">88.4% Intersection Benchmark</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #D4C5BD;">
+          <td style="color: #FFFFFF!important; padding: 8px;"><strong>mAP@50-95</strong></td>
+          <td style="color: #FFFFFF !important; padding: 8px;">Deep Positional Spatial Tracking</td>
+          <td style="color: #FFFFFF !important; padding: 8px;"><code style="color: #CD8151 !important; background: transparent !important;">0.513</code></td>
+          <td style="color: #FFFFFF !important; padding: 8px;">51.3% Complex Geometry Scale</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.sections", "navigation.instant", "navigation.expand", "toc.integrate", "search.highlight", "search.suggest", "search.share"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,960 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../backend/">
+      
+      
+        <link rel="next" href="../ai/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../images/icon-logo.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>IoT Hardware Prototype - Voxels Technical Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,700,700i%7CFira+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Poppins";--md-code-font:"Fira Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../styles/extra.css">
+    
+      <link rel="stylesheet" href="../styles/api-reference.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="brown" data-md-color-accent="amber">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#hardware-prototype-architecture" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Voxels Technical Documentation" class="md-header__button md-logo" aria-label="Voxels Technical Documentation" data-md-component="logo">
+      
+  <img src="../images/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Voxels Technical Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              IoT Hardware Prototype
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="brown" data-md-color-accent="amber"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Voxels Technical Documentation" class="md-nav__button md-logo" aria-label="Voxels Technical Documentation" data-md-component="logo">
+      
+  <img src="../images/logo.png" alt="logo">
+
+    </a>
+    Voxels Technical Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../how-it-works/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How It Works
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../features/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Features
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mobile-development/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Frontend Mobile
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dashboard-web/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Frontend Web
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backend/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Backend
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IoT Hardware Prototype
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IoT Hardware Prototype
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-system-block-diagram-interfaces" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. System Block Diagram &amp; Interfaces
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-core-hardware-specifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Core Hardware Specifications
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Core Hardware Specifications">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#physical-computational-core" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Physical &amp; Computational Core
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sensory-ingestion-subsystem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sensory Ingestion Subsystem
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deterrent-subsystem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deterrent Subsystem
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#power-telemetry-monitoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Power &amp; Telemetry Monitoring
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#long-range-transceiver" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Long-Range Transceiver
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-hardware-logic-flow-sequential-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Hardware Logic Flow (Sequential Processing)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-detailed-hardware-pinout-mapping" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Detailed Hardware Pinout Mapping
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-assembly-prototyping-protocols" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Assembly &amp; Prototyping Protocols
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Assembly &amp; Prototyping Protocols">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phase-1-power-isolation-safety" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 1: Power Isolation &amp; Safety
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-2-weatherproofing-heat-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 2: Weatherproofing &amp; Heat Management
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ai/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../qa-process/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Q/A Process
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Security Implemented
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deployment-process/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deployment Process
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../code-standards/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Code Standards
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../brand-guideline/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Brand Guideline
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="hardware-prototype-architecture">Hardware Prototype Architecture</h1>
+<p>The Mara Guard hardware node is built for rugged, remote deployment in the Maasai Mara National Reserve. It balances power-efficient standby modes with high-performance edge AI computation, sensory ingestion, and long-range communication.</p>
+<hr />
+<h2 id="1-system-block-diagram-interfaces">1. System Block Diagram &amp; Interfaces</h2>
+<p>The entire platform operates on an edge-hub topology, connecting low-power sensors and high-draw deterrents directly to a centralized, weather-sealed computing core.</p>
+<p><img alt="Voxels IoT Hardware Flow Layout" src="../images/Voxels-IoT-flow.png" /></p>
+<hr />
+<h2 id="2-core-hardware-specifications">2. Core Hardware Specifications</h2>
+<h3 id="physical-computational-core">Physical &amp; Computational Core</h3>
+<ul>
+<li><strong>Main Processor:</strong> Raspberry Pi 5 (8GB RAM configuration) running a lightweight, headless Linux environment optimized for edge AI inference.</li>
+<li><strong>Thermal Regulation:</strong> Active cooling fan with aluminum heatsinks housed within an IP66-rated, dustproof, and weather-sealed enclosure.</li>
+</ul>
+<h3 id="sensory-ingestion-subsystem">Sensory Ingestion Subsystem</h3>
+<ul>
+<li><strong>Radar Module:</strong> Industrial microwave radar sensor operating on a continuous detection loop.</li>
+<li><strong>Camera Module:</strong> High-definition, low-light infrared (IR) camera module connected via the onboard MIPI CSI interface.</li>
+</ul>
+<h3 id="deterrent-subsystem">Deterrent Subsystem</h3>
+<ul>
+<li><strong>Visual Deterrent:</strong> High-lumen structural spotlight connected through an optically isolated 5V/12V dual-channel relay board to protect logic pins.</li>
+<li><strong>Acoustic Deterrent:</strong> High-decibel onboard acoustic horn blast siren triggered via dedicated GPIO switching logic.</li>
+</ul>
+<h3 id="power-telemetry-monitoring">Power &amp; Telemetry Monitoring</h3>
+<ul>
+<li><strong>Telemetry Sensor:</strong> INA219 High-Side Current and Voltage Monitor communicating via the hardware I2C bus.</li>
+<li><strong>Power Source:</strong> Heavy-duty external battery pack built to withstand high extreme ambient heat fluctuations.</li>
+</ul>
+<h3 id="long-range-transceiver">Long-Range Transceiver</h3>
+<ul>
+<li><strong>Communication Chip:</strong> Point-to-point LoRa radio module interfaced via the hardware SPI bus for low-power, cell-tower-free telemetry transmission.</li>
+</ul>
+<hr />
+<h2 id="3-hardware-logic-flow-sequential-processing">3. Hardware Logic Flow (Sequential Processing)</h2>
+<ol>
+<li><strong>All-Weather Ingestion Loop:</strong> The industrial microwave radar sensor monitors the 6-meter boundary line. The camera sits in a low-power sleep state.</li>
+<li><strong>Hardware Interrupt Trigger:</strong> When physical motion breaks the radar tracking zone, a hardware interrupt signal forces the camera to instantly awaken.</li>
+<li><strong>Edge Video Streaming:</strong> The camera streams live, low-light video frames directly over the MIPI CSI channel straight into the Raspberry Pi 5 memory space.</li>
+<li><strong>Local YOLOv8 Inference:</strong> The localized computer running inside the chassis processes the frame frames via a native YOLOv8 target classification model. If a lion profile matches, the pipeline proceeds; if domestic stock or an accidental brush movement is caught, the frame drops.</li>
+<li><strong>Layered Deterrent Flags:</strong> Upon target confirmation, the Pi pulls designated relay GPIO lines high, triggering a dual blast of the high-lumen structural spotlight and the acoustic siren horn loop.</li>
+<li><strong>Telemetry Packaging:</strong> The INA219 tracking module captures voltage, current draw, and total remaining capacity. This diagnostic log is aggregated alongside the incident timestamps.</li>
+<li><strong>Point-to-Point Uplink:</strong> The telemetry footprint broadcasts wirelessly over point-to-point LoRa frequencies back to a local base station gateway, routing straight out to the rangers' field dashboard.</li>
+</ol>
+<hr />
+<h2 id="4-detailed-hardware-pinout-mapping">4. Detailed Hardware Pinout Mapping</h2>
+<div style="color: #d59b67; font-family: monospace; font-size: 15px; font-weight: bold; line-height: 1.8; white-space: pre; overflow: none; padding: 15px 0; text-align: left;">
+[ Microwave Radar ] &rarr; OUT (Digital)       &rarr; GPIO 17 (Pin 11)   &rarr; Wakes camera from standby
+[ Camera Module   ] &rarr; Ribbon Cable     &rarr; MIPI CSI Port 0     &rarr; High-speed video streams
+[ Relay 1 (Light) ] &rarr; IN1 (Active Low)  &rarr; GPIO 27 (Pin 13)   &rarr; Controls spotlight power
+[ Relay 2 (Siren) ] &rarr; IN2 (Active Low)  &rarr; GPIO 22 (Pin 15)   &rarr; Controls acoustic horn power
+[ INA219 Monitor  ] &rarr; SDA / SCL         &rarr; GPIO 2 / 3 (I2C)   &rarr; Tracks voltage and current
+[ LoRa Module     ] &rarr; MOSI/MISO/SCK/CS  &rarr; SPI0 (Pins 19+)    &rarr; Long-range data radio loops
+</div>
+
+<hr />
+<h2 id="5-assembly-prototyping-protocols">5. Assembly &amp; Prototyping Protocols</h2>
+<h3 id="phase-1-power-isolation-safety">Phase 1: Power Isolation &amp; Safety</h3>
+<ul>
+<li><strong>Optocoupled Isolation:</strong> Never connect high-current power lines from the spotlight or acoustic siren directly to the Raspberry Pi GPIO headers. Always route them through the isolated relay board channel interfaces.</li>
+<li><strong>Ground Sharing:</strong> Ensure a common ground (GND) loop is established exclusively between the logic side of the sensors, the INA219 tracking module, and the Raspberry Pi ground pins to prevent floating signal data.</li>
+</ul>
+<h3 id="phase-2-weatherproofing-heat-management">Phase 2: Weatherproofing &amp; Heat Management</h3>
+<ul>
+<li><strong>Enclosure Sealing:</strong> Pass all external wiring (Radar out lines, Camera flex ribbons, Power lines to Spotlight) through protective rubber cable glands to maintain the IP66 ingress protection rating against heavy dust storms and rain.</li>
+<li><strong>Heatsink Fitting:</strong> Apply thermal paste or high-conductivity thermal pads between the Raspberry Pi 5 SoC and the active cooling fan chassis before sealing the node closed.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.sections", "navigation.instant", "navigation.expand", "toc.integrate", "search.highlight", "search.suggest", "search.share"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>
